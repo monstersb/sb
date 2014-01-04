@@ -6,6 +6,7 @@ module sbC @safe()
 	uses interface Timer<TMilli> as Timer_scan;
 	uses interface Timer<TMilli> as Timer_dead;
 	uses interface Timer<TMilli> as Timer_winner;
+	uses interface Timer<TMilli> as Timer_startgame;
 	uses interface SplitControl as AMControl;
 	uses interface AMSend;
 	uses interface AMPacket;
@@ -19,11 +20,13 @@ implementation
 {
 	int8_t inited = 0;
 	int8_t fscan = 0;
+	int8_t fstartgame = 0;
 	bool started = FALSE;
+	bool gamestarted = FALSE;
 	bool busy = FALSE;
 	void m_init();
 	void m_scan();
-	void startgame();
+	void startgame(bool f);
 
 
 
@@ -64,9 +67,13 @@ implementation
 			return msg;
 		}
 		rpkg = (pPPackage)payload;
-		if (rpkg->action == ACTION_FIND)
+		if (rpkg->action == ACTION_FIND || rpkg->action == ACTION_START_GAME)
 		{
-			startgame();
+			if (gamestarted)
+			{
+				return msg;
+			}
+			startgame(rpkg->action == ACTION_FIND ? TRUE : FALSE);
 			return msg;
 			//AMSend.send(AM_BROADCAST_ADDR, &pkt, sizeof(1));
 		}
@@ -78,12 +85,21 @@ implementation
 		return msg;
 	}
 
-	void startgame()
+	void startgame(bool f)
 	{
+		pPPackage spkg;
+		if (f)
+		{
+			spkg = (pPPackage)call Packet.getPayload(&pkt, sizeof(PPackage));
+			spkg->action = ACTION_START_GAME;
+			call AMSend.send(AM_BROADCAST_ADDR, &pkt, sizeof(PPackage));
+		}
+		gamestarted = TRUE;
 		call Timer_scan.stop();
 		call Leds.led0Off();
 		call Leds.led1Off();
 		call Leds.led2Off();
+		call Timer_startgame.startPeriodic(100);
 	}
 
 	event void AMControl.startDone(error_t err)
@@ -142,6 +158,7 @@ implementation
 
 	event void Timer_scan.fired()
 	{
+		pPPackage spkg;
 		fscan = fscan % 7;
 		if (fscan == 0)
 		{
@@ -161,17 +178,16 @@ implementation
 		{
 			call Leds.led2Toggle();
 		}
-		else if (fscan == 4)
-		{
-			pPPackage spkg;
-			spkg = (pPPackage)call Packet.getPayload(&pkt, sizeof(PPackage));
+		//else if (fscan == 4)
+		//{
+		spkg = (pPPackage)call Packet.getPayload(&pkt, sizeof(PPackage));
 			//if (spkg == 0)
 			//{
 			//	call Timer_scan.stop();
 			//}
-			spkg->action = ACTION_FIND;
-			call AMSend.send(AM_BROADCAST_ADDR, &pkt, sizeof(PPackage));
-		}
+		spkg->action = ACTION_FIND;
+		call AMSend.send(AM_BROADCAST_ADDR, &pkt, sizeof(PPackage));
+		//}
 		fscan = fscan + 1;
 		
 		/*
@@ -191,6 +207,19 @@ implementation
 			}
 		}*/
 	}
+
+	event void Timer_startgame.fired()
+	{
+		if (fstartgame == 11)
+		{
+			call Timer_startgame.stop();
+		}
+		call Leds.led0Toggle();
+		call Leds.led1Toggle();
+		call Leds.led2Toggle();
+		fstartgame = fstartgame + 1;
+	}
+	
 
 	event void Timer_dead.fired()
 	{

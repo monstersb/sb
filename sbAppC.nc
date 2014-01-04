@@ -15,6 +15,7 @@ implementation {
 	components new TimerMilliC() as Timer_init;
 	components new TimerMilliC() as Timer_scan;
 	components new TimerMilliC() as Timer_dead;
+	components new TimerMilliC() as Timer_startgame;
 	components new TimerMilliC() as Timer_winner;
 
 	sbC -> MainC.Boot;
@@ -30,4 +31,5 @@ implementation {
 	sbC.Timer_scan -> Timer_scan;
 	sbC.Timer_dead -> Timer_dead;
 	sbC.Timer_winner -> Timer_winner;
+	sbC.Timer_startgame -> Timer_startgame;
 }
