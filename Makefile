@@ -1,0 +1,3 @@
+COMPONENT=sbAppC
+include $(MAKERULES)
+
