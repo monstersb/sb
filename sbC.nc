@@ -254,7 +254,7 @@ implementation
 	{
 	}
 
-	void m_addacked(int8_t x)
+	void m_attacked(int8_t x)
 	{
 		pPPackage spkg;
 		call Timer_attacked.startPeriodic(200);

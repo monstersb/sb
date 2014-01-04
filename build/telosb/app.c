@@ -229,12 +229,12 @@ typedef int32_t ufs_daddr_t;
 typedef int32_t ufs_time_t;
 typedef u_int32_t uid_t;
 # 41 "/usr/lib64/gcc/msp430/4.6.3/../../../../msp430/include/string.h" 3
-extern int memcmp(const void *arg_0x7f0a82724de8, const void *arg_0x7f0a82723100, size_t arg_0x7f0a827233a8);
-extern void *memcpy(void *arg_0x7f0a82723bf0, const void *arg_0x7f0a82721020, size_t arg_0x7f0a827212c8);
+extern int memcmp(const void *arg_0x7f44c4970de8, const void *arg_0x7f44c496f100, size_t arg_0x7f44c496f3a8);
+extern void *memcpy(void *arg_0x7f44c496fbf0, const void *arg_0x7f44c496d020, size_t arg_0x7f44c496d2c8);
 
-extern void *memset(void *arg_0x7f0a82720980, int arg_0x7f0a82720be8, size_t arg_0x7f0a8271f020);
+extern void *memset(void *arg_0x7f44c496c980, int arg_0x7f44c496cbe8, size_t arg_0x7f44c496b020);
 #line 65
-extern void *memset(void *arg_0x7f0a82709b10, int arg_0x7f0a82709d78, size_t arg_0x7f0a82708060);
+extern void *memset(void *arg_0x7f44c4955b10, int arg_0x7f44c4955d78, size_t arg_0x7f44c4954060);
 # 62 "/usr/lib64/gcc/msp430/4.6.3/../../../../msp430/include/stdlib.h" 3
 #line 59
 typedef struct __nesc_unnamed4242 {
@@ -389,7 +389,7 @@ struct _reent {
 
   int __sdidinit;
 
-  void (*__cleanup)(struct _reent *arg_0x7f0a826cd290);
+  void (*__cleanup)(struct _reent *arg_0x7f44c4919290);
 
 
   struct _Bigint *_result;
@@ -429,7 +429,7 @@ struct _reent {
   struct _atexit _atexit0;
 
 
-  void (**_sig_func)(int arg_0x7f0a826c8300);
+  void (**_sig_func)(int arg_0x7f44c4914300);
 
 
 
@@ -1902,7 +1902,7 @@ static void /*Msp430TimerC.Msp430TimerA*/Msp430TimerP__0__VectorTimerX1__fired(v
 #line 39
 static void /*Msp430TimerC.Msp430TimerA*/Msp430TimerP__0__Event__default__fired(
 # 51 "/root/tinyos/tinyos-main/tos/chips/msp430/timer/Msp430TimerP.nc"
-uint8_t arg_0x7f0a82115dd0);
+uint8_t arg_0x7f44c4361dd0);
 # 45 "/root/tinyos/tinyos-main/tos/chips/msp430/timer/Msp430Timer.nc"
 static uint16_t /*Msp430TimerC.Msp430TimerA*/Msp430TimerP__0__Timer__get(void );
 # 39 "/root/tinyos/tinyos-main/tos/chips/msp430/timer/Msp430TimerEvent.nc"
@@ -1914,7 +1914,7 @@ static void /*Msp430TimerC.Msp430TimerB*/Msp430TimerP__1__VectorTimerX1__fired(v
 #line 39
 static void /*Msp430TimerC.Msp430TimerB*/Msp430TimerP__1__Event__default__fired(
 # 51 "/root/tinyos/tinyos-main/tos/chips/msp430/timer/Msp430TimerP.nc"
-uint8_t arg_0x7f0a82115dd0);
+uint8_t arg_0x7f44c4361dd0);
 # 45 "/root/tinyos/tinyos-main/tos/chips/msp430/timer/Msp430Timer.nc"
 static uint16_t /*Msp430TimerC.Msp430TimerB*/Msp430TimerP__1__Timer__get(void );
 static bool /*Msp430TimerC.Msp430TimerB*/Msp430TimerP__1__Timer__isOverflowPending(void );
@@ -2088,11 +2088,11 @@ static void McuSleepC__McuSleep__sleep(void );
 # 67 "/root/tinyos/tinyos-main/tos/interfaces/TaskBasic.nc"
 static error_t SchedulerBasicP__TaskBasic__postTask(
 # 56 "/root/tinyos/tinyos-main/tos/system/SchedulerBasicP.nc"
-uint8_t arg_0x7f0a82200650);
+uint8_t arg_0x7f44c444c650);
 # 75 "/root/tinyos/tinyos-main/tos/interfaces/TaskBasic.nc"
 static void SchedulerBasicP__TaskBasic__default__runTask(
 # 56 "/root/tinyos/tinyos-main/tos/system/SchedulerBasicP.nc"
-uint8_t arg_0x7f0a82200650);
+uint8_t arg_0x7f44c444c650);
 # 57 "/root/tinyos/tinyos-main/tos/interfaces/Scheduler.nc"
 static void SchedulerBasicP__Scheduler__init(void );
 #line 72
@@ -2109,7 +2109,21 @@ static void LedsP__Leds__led0Off(void );
 
 
 static void LedsP__Leds__led0Toggle(void );
-#line 83
+
+
+
+
+static void LedsP__Leds__led1On(void );
+
+
+
+
+
+
+
+
+
+
 static void LedsP__Leds__led1Toggle(void );
 #line 100
 static void LedsP__Leds__led2Toggle(void );
@@ -2117,6 +2131,10 @@ static void LedsP__Leds__led2Toggle(void );
 static void LedsP__Leds__led1Off(void );
 #line 94
 static void LedsP__Leds__led2Off(void );
+#line 56
+static void LedsP__Leds__led0On(void );
+#line 89
+static void LedsP__Leds__led2On(void );
 # 73 "/root/tinyos/tinyos-main/tos/chips/msp430/pins/HplMsp430GeneralIO.nc"
 static bool /*HplMsp430GeneralIOC.P10*/HplMsp430GeneralIOP__0__IO__get(void );
 #line 66
@@ -2232,7 +2250,7 @@ static void /*HplMsp430GeneralIOC.P54*/HplMsp430GeneralIOP__36__IO__set(void );
 
 
 
-
+static void /*HplMsp430GeneralIOC.P54*/HplMsp430GeneralIOP__36__IO__clr(void );
 
 
 
@@ -2246,7 +2264,7 @@ static void /*HplMsp430GeneralIOC.P55*/HplMsp430GeneralIOP__37__IO__set(void );
 
 
 
-
+static void /*HplMsp430GeneralIOC.P55*/HplMsp430GeneralIOP__37__IO__clr(void );
 
 
 
@@ -2256,6 +2274,11 @@ static void /*HplMsp430GeneralIOC.P56*/HplMsp430GeneralIOP__38__IO__toggle(void 
 static void /*HplMsp430GeneralIOC.P56*/HplMsp430GeneralIOP__38__IO__makeOutput(void );
 #line 48
 static void /*HplMsp430GeneralIOC.P56*/HplMsp430GeneralIOP__38__IO__set(void );
+
+
+
+
+static void /*HplMsp430GeneralIOC.P56*/HplMsp430GeneralIOP__38__IO__clr(void );
 # 42 "/root/tinyos/tinyos-main/tos/interfaces/GeneralIO.nc"
 static void /*PlatformLedsC.Led0Impl*/Msp430GpioC__0__GeneralIO__toggle(void );
 
@@ -2264,7 +2287,7 @@ static void /*PlatformLedsC.Led0Impl*/Msp430GpioC__0__GeneralIO__toggle(void );
 static void /*PlatformLedsC.Led0Impl*/Msp430GpioC__0__GeneralIO__makeOutput(void );
 #line 40
 static void /*PlatformLedsC.Led0Impl*/Msp430GpioC__0__GeneralIO__set(void );
-
+static void /*PlatformLedsC.Led0Impl*/Msp430GpioC__0__GeneralIO__clr(void );
 static void /*PlatformLedsC.Led1Impl*/Msp430GpioC__1__GeneralIO__toggle(void );
 
 
@@ -2272,7 +2295,7 @@ static void /*PlatformLedsC.Led1Impl*/Msp430GpioC__1__GeneralIO__toggle(void );
 static void /*PlatformLedsC.Led1Impl*/Msp430GpioC__1__GeneralIO__makeOutput(void );
 #line 40
 static void /*PlatformLedsC.Led1Impl*/Msp430GpioC__1__GeneralIO__set(void );
-
+static void /*PlatformLedsC.Led1Impl*/Msp430GpioC__1__GeneralIO__clr(void );
 static void /*PlatformLedsC.Led2Impl*/Msp430GpioC__2__GeneralIO__toggle(void );
 
 
@@ -2280,6 +2303,7 @@ static void /*PlatformLedsC.Led2Impl*/Msp430GpioC__2__GeneralIO__toggle(void );
 static void /*PlatformLedsC.Led2Impl*/Msp430GpioC__2__GeneralIO__makeOutput(void );
 #line 40
 static void /*PlatformLedsC.Led2Impl*/Msp430GpioC__2__GeneralIO__set(void );
+static void /*PlatformLedsC.Led2Impl*/Msp430GpioC__2__GeneralIO__clr(void );
 # 83 "/root/tinyos/tinyos-main/tos/lib/timer/Timer.nc"
 static void sbC__Timer_fight__fired(void );
 #line 83
@@ -2624,31 +2648,31 @@ error_t error);
 # 62 "/root/tinyos/tinyos-main/tos/chips/cc2420/interfaces/CC2420Fifo.nc"
 static error_t CC2420SpiP__Fifo__continueRead(
 # 46 "/root/tinyos/tinyos-main/tos/chips/cc2420/spi/CC2420SpiP.nc"
-uint8_t arg_0x7f0a81863ca8, 
+uint8_t arg_0x7f44c3aafca8, 
 # 62 "/root/tinyos/tinyos-main/tos/chips/cc2420/interfaces/CC2420Fifo.nc"
 uint8_t * data, uint8_t length);
 #line 91
 static void CC2420SpiP__Fifo__default__writeDone(
 # 46 "/root/tinyos/tinyos-main/tos/chips/cc2420/spi/CC2420SpiP.nc"
-uint8_t arg_0x7f0a81863ca8, 
+uint8_t arg_0x7f44c3aafca8, 
 # 91 "/root/tinyos/tinyos-main/tos/chips/cc2420/interfaces/CC2420Fifo.nc"
 uint8_t * data, uint8_t length, error_t error);
 #line 82
 static cc2420_status_t CC2420SpiP__Fifo__write(
 # 46 "/root/tinyos/tinyos-main/tos/chips/cc2420/spi/CC2420SpiP.nc"
-uint8_t arg_0x7f0a81863ca8, 
+uint8_t arg_0x7f44c3aafca8, 
 # 82 "/root/tinyos/tinyos-main/tos/chips/cc2420/interfaces/CC2420Fifo.nc"
 uint8_t * data, uint8_t length);
 #line 51
 static cc2420_status_t CC2420SpiP__Fifo__beginRead(
 # 46 "/root/tinyos/tinyos-main/tos/chips/cc2420/spi/CC2420SpiP.nc"
-uint8_t arg_0x7f0a81863ca8, 
+uint8_t arg_0x7f44c3aafca8, 
 # 51 "/root/tinyos/tinyos-main/tos/chips/cc2420/interfaces/CC2420Fifo.nc"
 uint8_t * data, uint8_t length);
 #line 71
 static void CC2420SpiP__Fifo__default__readDone(
 # 46 "/root/tinyos/tinyos-main/tos/chips/cc2420/spi/CC2420SpiP.nc"
-uint8_t arg_0x7f0a81863ca8, 
+uint8_t arg_0x7f44c3aafca8, 
 # 71 "/root/tinyos/tinyos-main/tos/chips/cc2420/interfaces/CC2420Fifo.nc"
 uint8_t * data, uint8_t length, error_t error);
 # 31 "/root/tinyos/tinyos-main/tos/chips/cc2420/interfaces/ChipSpiResource.nc"
@@ -2666,13 +2690,13 @@ static void CC2420SpiP__SpiResource__granted(void );
 # 63 "/root/tinyos/tinyos-main/tos/chips/cc2420/interfaces/CC2420Ram.nc"
 static cc2420_status_t CC2420SpiP__Ram__write(
 # 47 "/root/tinyos/tinyos-main/tos/chips/cc2420/spi/CC2420SpiP.nc"
-uint16_t arg_0x7f0a81862e68, 
+uint16_t arg_0x7f44c3aaee68, 
 # 63 "/root/tinyos/tinyos-main/tos/chips/cc2420/interfaces/CC2420Ram.nc"
 uint8_t offset, uint8_t * data, uint8_t length);
 # 55 "/root/tinyos/tinyos-main/tos/chips/cc2420/interfaces/CC2420Register.nc"
 static cc2420_status_t CC2420SpiP__Reg__read(
 # 48 "/root/tinyos/tinyos-main/tos/chips/cc2420/spi/CC2420SpiP.nc"
-uint8_t arg_0x7f0a81861b98, 
+uint8_t arg_0x7f44c3aacb98, 
 # 55 "/root/tinyos/tinyos-main/tos/chips/cc2420/interfaces/CC2420Register.nc"
 uint16_t *data);
 
@@ -2684,55 +2708,55 @@ uint16_t *data);
 
 static cc2420_status_t CC2420SpiP__Reg__write(
 # 48 "/root/tinyos/tinyos-main/tos/chips/cc2420/spi/CC2420SpiP.nc"
-uint8_t arg_0x7f0a81861b98, 
+uint8_t arg_0x7f44c3aacb98, 
 # 63 "/root/tinyos/tinyos-main/tos/chips/cc2420/interfaces/CC2420Register.nc"
 uint16_t data);
 # 120 "/root/tinyos/tinyos-main/tos/interfaces/Resource.nc"
 static error_t CC2420SpiP__Resource__release(
 # 45 "/root/tinyos/tinyos-main/tos/chips/cc2420/spi/CC2420SpiP.nc"
-uint8_t arg_0x7f0a81864a68);
+uint8_t arg_0x7f44c3ab0a68);
 # 97 "/root/tinyos/tinyos-main/tos/interfaces/Resource.nc"
 static error_t CC2420SpiP__Resource__immediateRequest(
 # 45 "/root/tinyos/tinyos-main/tos/chips/cc2420/spi/CC2420SpiP.nc"
-uint8_t arg_0x7f0a81864a68);
+uint8_t arg_0x7f44c3ab0a68);
 # 88 "/root/tinyos/tinyos-main/tos/interfaces/Resource.nc"
 static error_t CC2420SpiP__Resource__request(
 # 45 "/root/tinyos/tinyos-main/tos/chips/cc2420/spi/CC2420SpiP.nc"
-uint8_t arg_0x7f0a81864a68);
+uint8_t arg_0x7f44c3ab0a68);
 # 102 "/root/tinyos/tinyos-main/tos/interfaces/Resource.nc"
 static void CC2420SpiP__Resource__default__granted(
 # 45 "/root/tinyos/tinyos-main/tos/chips/cc2420/spi/CC2420SpiP.nc"
-uint8_t arg_0x7f0a81864a68);
+uint8_t arg_0x7f44c3ab0a68);
 # 128 "/root/tinyos/tinyos-main/tos/interfaces/Resource.nc"
 static bool CC2420SpiP__Resource__isOwner(
 # 45 "/root/tinyos/tinyos-main/tos/chips/cc2420/spi/CC2420SpiP.nc"
-uint8_t arg_0x7f0a81864a68);
+uint8_t arg_0x7f44c3ab0a68);
 # 75 "/root/tinyos/tinyos-main/tos/interfaces/TaskBasic.nc"
 static void CC2420SpiP__grant__runTask(void );
 # 53 "/root/tinyos/tinyos-main/tos/chips/cc2420/interfaces/CC2420Strobe.nc"
 static cc2420_status_t CC2420SpiP__Strobe__strobe(
 # 49 "/root/tinyos/tinyos-main/tos/chips/cc2420/spi/CC2420SpiP.nc"
-uint8_t arg_0x7f0a8185f8f0);
+uint8_t arg_0x7f44c3aab8f0);
 # 62 "/root/tinyos/tinyos-main/tos/interfaces/Init.nc"
 static error_t StateImplP__Init__init(void );
 # 56 "/root/tinyos/tinyos-main/tos/interfaces/State.nc"
 static void StateImplP__State__toIdle(
 # 67 "/root/tinyos/tinyos-main/tos/system/StateImplP.nc"
-uint8_t arg_0x7f0a817ee020);
+uint8_t arg_0x7f44c3a39020);
 # 66 "/root/tinyos/tinyos-main/tos/interfaces/State.nc"
 static bool StateImplP__State__isState(
 # 67 "/root/tinyos/tinyos-main/tos/system/StateImplP.nc"
-uint8_t arg_0x7f0a817ee020, 
+uint8_t arg_0x7f44c3a39020, 
 # 66 "/root/tinyos/tinyos-main/tos/interfaces/State.nc"
 uint8_t myState);
 #line 61
 static bool StateImplP__State__isIdle(
 # 67 "/root/tinyos/tinyos-main/tos/system/StateImplP.nc"
-uint8_t arg_0x7f0a817ee020);
+uint8_t arg_0x7f44c3a39020);
 # 45 "/root/tinyos/tinyos-main/tos/interfaces/State.nc"
 static error_t StateImplP__State__requestState(
 # 67 "/root/tinyos/tinyos-main/tos/system/StateImplP.nc"
-uint8_t arg_0x7f0a817ee020, 
+uint8_t arg_0x7f44c3a39020, 
 # 45 "/root/tinyos/tinyos-main/tos/interfaces/State.nc"
 uint8_t reqState);
 
@@ -2742,21 +2766,21 @@ uint8_t reqState);
 
 static void StateImplP__State__forceState(
 # 67 "/root/tinyos/tinyos-main/tos/system/StateImplP.nc"
-uint8_t arg_0x7f0a817ee020, 
+uint8_t arg_0x7f44c3a39020, 
 # 51 "/root/tinyos/tinyos-main/tos/interfaces/State.nc"
 uint8_t reqState);
 # 65 "/root/tinyos/tinyos-main/tos/interfaces/ResourceConfigure.nc"
 static void /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__ResourceConfigure__unconfigure(
 # 76 "/root/tinyos/tinyos-main/tos/chips/msp430/usart/Msp430SpiNoDmaP.nc"
-uint8_t arg_0x7f0a817664b8);
+uint8_t arg_0x7f44c39b24b8);
 # 59 "/root/tinyos/tinyos-main/tos/interfaces/ResourceConfigure.nc"
 static void /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__ResourceConfigure__configure(
 # 76 "/root/tinyos/tinyos-main/tos/chips/msp430/usart/Msp430SpiNoDmaP.nc"
-uint8_t arg_0x7f0a817664b8);
+uint8_t arg_0x7f44c39b24b8);
 # 70 "/root/tinyos/tinyos-main/tos/interfaces/SpiPacket.nc"
 static error_t /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__SpiPacket__send(
 # 79 "/root/tinyos/tinyos-main/tos/chips/msp430/usart/Msp430SpiNoDmaP.nc"
-uint8_t arg_0x7f0a817642f0, 
+uint8_t arg_0x7f44c39b02f0, 
 # 59 "/root/tinyos/tinyos-main/tos/interfaces/SpiPacket.nc"
 uint8_t * txBuf, 
 
@@ -2773,7 +2797,7 @@ uint16_t len);
 #line 82
 static void /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__SpiPacket__default__sendDone(
 # 79 "/root/tinyos/tinyos-main/tos/chips/msp430/usart/Msp430SpiNoDmaP.nc"
-uint8_t arg_0x7f0a817642f0, 
+uint8_t arg_0x7f44c39b02f0, 
 # 75 "/root/tinyos/tinyos-main/tos/interfaces/SpiPacket.nc"
 uint8_t * txBuf, 
 uint8_t * rxBuf, 
@@ -2787,49 +2811,49 @@ error_t error);
 # 39 "/root/tinyos/tinyos-main/tos/chips/msp430/usart/Msp430SpiConfigure.nc"
 static msp430_spi_union_config_t */*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__Msp430SpiConfigure__default__getConfig(
 # 82 "/root/tinyos/tinyos-main/tos/chips/msp430/usart/Msp430SpiNoDmaP.nc"
-uint8_t arg_0x7f0a817612f0);
+uint8_t arg_0x7f44c39ad2f0);
 # 45 "/root/tinyos/tinyos-main/tos/interfaces/SpiByte.nc"
 static uint8_t /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__SpiByte__write(uint8_t tx);
 # 120 "/root/tinyos/tinyos-main/tos/interfaces/Resource.nc"
 static error_t /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__UsartResource__default__release(
 # 81 "/root/tinyos/tinyos-main/tos/chips/msp430/usart/Msp430SpiNoDmaP.nc"
-uint8_t arg_0x7f0a817630c8);
+uint8_t arg_0x7f44c39ae0c8);
 # 97 "/root/tinyos/tinyos-main/tos/interfaces/Resource.nc"
 static error_t /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__UsartResource__default__immediateRequest(
 # 81 "/root/tinyos/tinyos-main/tos/chips/msp430/usart/Msp430SpiNoDmaP.nc"
-uint8_t arg_0x7f0a817630c8);
+uint8_t arg_0x7f44c39ae0c8);
 # 88 "/root/tinyos/tinyos-main/tos/interfaces/Resource.nc"
 static error_t /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__UsartResource__default__request(
 # 81 "/root/tinyos/tinyos-main/tos/chips/msp430/usart/Msp430SpiNoDmaP.nc"
-uint8_t arg_0x7f0a817630c8);
+uint8_t arg_0x7f44c39ae0c8);
 # 102 "/root/tinyos/tinyos-main/tos/interfaces/Resource.nc"
 static void /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__UsartResource__granted(
 # 81 "/root/tinyos/tinyos-main/tos/chips/msp430/usart/Msp430SpiNoDmaP.nc"
-uint8_t arg_0x7f0a817630c8);
+uint8_t arg_0x7f44c39ae0c8);
 # 128 "/root/tinyos/tinyos-main/tos/interfaces/Resource.nc"
 static bool /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__UsartResource__default__isOwner(
 # 81 "/root/tinyos/tinyos-main/tos/chips/msp430/usart/Msp430SpiNoDmaP.nc"
-uint8_t arg_0x7f0a817630c8);
+uint8_t arg_0x7f44c39ae0c8);
 # 120 "/root/tinyos/tinyos-main/tos/interfaces/Resource.nc"
 static error_t /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__Resource__release(
 # 75 "/root/tinyos/tinyos-main/tos/chips/msp430/usart/Msp430SpiNoDmaP.nc"
-uint8_t arg_0x7f0a817672f0);
+uint8_t arg_0x7f44c39b32f0);
 # 97 "/root/tinyos/tinyos-main/tos/interfaces/Resource.nc"
 static error_t /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__Resource__immediateRequest(
 # 75 "/root/tinyos/tinyos-main/tos/chips/msp430/usart/Msp430SpiNoDmaP.nc"
-uint8_t arg_0x7f0a817672f0);
+uint8_t arg_0x7f44c39b32f0);
 # 88 "/root/tinyos/tinyos-main/tos/interfaces/Resource.nc"
 static error_t /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__Resource__request(
 # 75 "/root/tinyos/tinyos-main/tos/chips/msp430/usart/Msp430SpiNoDmaP.nc"
-uint8_t arg_0x7f0a817672f0);
+uint8_t arg_0x7f44c39b32f0);
 # 102 "/root/tinyos/tinyos-main/tos/interfaces/Resource.nc"
 static void /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__Resource__default__granted(
 # 75 "/root/tinyos/tinyos-main/tos/chips/msp430/usart/Msp430SpiNoDmaP.nc"
-uint8_t arg_0x7f0a817672f0);
+uint8_t arg_0x7f44c39b32f0);
 # 128 "/root/tinyos/tinyos-main/tos/interfaces/Resource.nc"
 static bool /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__Resource__isOwner(
 # 75 "/root/tinyos/tinyos-main/tos/chips/msp430/usart/Msp430SpiNoDmaP.nc"
-uint8_t arg_0x7f0a817672f0);
+uint8_t arg_0x7f44c39b32f0);
 # 54 "/root/tinyos/tinyos-main/tos/chips/msp430/usart/HplMsp430UsartInterrupts.nc"
 static void /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__UsartInterrupts__rxDone(uint8_t data);
 #line 49
@@ -2869,19 +2893,19 @@ static void HplMsp430Usart0P__Usart__disableSpi(void );
 # 54 "/root/tinyos/tinyos-main/tos/chips/msp430/usart/HplMsp430UsartInterrupts.nc"
 static void /*Msp430UsartShare0P.UsartShareP*/Msp430UsartShareP__0__Interrupts__default__rxDone(
 # 39 "/root/tinyos/tinyos-main/tos/chips/msp430/usart/Msp430UsartShareP.nc"
-uint8_t arg_0x7f0a81605800, 
+uint8_t arg_0x7f44c3851800, 
 # 54 "/root/tinyos/tinyos-main/tos/chips/msp430/usart/HplMsp430UsartInterrupts.nc"
 uint8_t data);
 #line 49
 static void /*Msp430UsartShare0P.UsartShareP*/Msp430UsartShareP__0__Interrupts__default__txDone(
 # 39 "/root/tinyos/tinyos-main/tos/chips/msp430/usart/Msp430UsartShareP.nc"
-uint8_t arg_0x7f0a81605800);
+uint8_t arg_0x7f44c3851800);
 # 39 "/root/tinyos/tinyos-main/tos/chips/msp430/usart/HplMsp430I2CInterrupts.nc"
 static void /*Msp430UsartShare0P.UsartShareP*/Msp430UsartShareP__0__RawI2CInterrupts__fired(void );
 #line 39
 static void /*Msp430UsartShare0P.UsartShareP*/Msp430UsartShareP__0__I2CInterrupts__default__fired(
 # 40 "/root/tinyos/tinyos-main/tos/chips/msp430/usart/Msp430UsartShareP.nc"
-uint8_t arg_0x7f0a81604620);
+uint8_t arg_0x7f44c3850620);
 # 54 "/root/tinyos/tinyos-main/tos/chips/msp430/usart/HplMsp430UsartInterrupts.nc"
 static void /*Msp430UsartShare0P.UsartShareP*/Msp430UsartShareP__0__RawInterrupts__rxDone(uint8_t data);
 #line 49
@@ -2912,19 +2936,19 @@ static resource_client_id_t /*Msp430UsartShare0P.ArbiterC.Queue*/FcfsResourceQue
 # 53 "/root/tinyos/tinyos-main/tos/interfaces/ResourceRequested.nc"
 static void /*Msp430UsartShare0P.ArbiterC.Arbiter*/ArbiterP__0__ResourceRequested__default__requested(
 # 55 "/root/tinyos/tinyos-main/tos/system/ArbiterP.nc"
-uint8_t arg_0x7f0a815c67e8);
+uint8_t arg_0x7f44c38127e8);
 # 61 "/root/tinyos/tinyos-main/tos/interfaces/ResourceRequested.nc"
 static void /*Msp430UsartShare0P.ArbiterC.Arbiter*/ArbiterP__0__ResourceRequested__default__immediateRequested(
 # 55 "/root/tinyos/tinyos-main/tos/system/ArbiterP.nc"
-uint8_t arg_0x7f0a815c67e8);
+uint8_t arg_0x7f44c38127e8);
 # 65 "/root/tinyos/tinyos-main/tos/interfaces/ResourceConfigure.nc"
 static void /*Msp430UsartShare0P.ArbiterC.Arbiter*/ArbiterP__0__ResourceConfigure__default__unconfigure(
 # 60 "/root/tinyos/tinyos-main/tos/system/ArbiterP.nc"
-uint8_t arg_0x7f0a815c49b8);
+uint8_t arg_0x7f44c38109b8);
 # 59 "/root/tinyos/tinyos-main/tos/interfaces/ResourceConfigure.nc"
 static void /*Msp430UsartShare0P.ArbiterC.Arbiter*/ArbiterP__0__ResourceConfigure__default__configure(
 # 60 "/root/tinyos/tinyos-main/tos/system/ArbiterP.nc"
-uint8_t arg_0x7f0a815c49b8);
+uint8_t arg_0x7f44c38109b8);
 # 56 "/root/tinyos/tinyos-main/tos/interfaces/ResourceDefaultOwner.nc"
 static error_t /*Msp430UsartShare0P.ArbiterC.Arbiter*/ArbiterP__0__ResourceDefaultOwner__release(void );
 #line 73
@@ -2936,23 +2960,23 @@ static void /*Msp430UsartShare0P.ArbiterC.Arbiter*/ArbiterP__0__ResourceDefaultO
 # 120 "/root/tinyos/tinyos-main/tos/interfaces/Resource.nc"
 static error_t /*Msp430UsartShare0P.ArbiterC.Arbiter*/ArbiterP__0__Resource__release(
 # 54 "/root/tinyos/tinyos-main/tos/system/ArbiterP.nc"
-uint8_t arg_0x7f0a815c8640);
+uint8_t arg_0x7f44c3813640);
 # 97 "/root/tinyos/tinyos-main/tos/interfaces/Resource.nc"
 static error_t /*Msp430UsartShare0P.ArbiterC.Arbiter*/ArbiterP__0__Resource__immediateRequest(
 # 54 "/root/tinyos/tinyos-main/tos/system/ArbiterP.nc"
-uint8_t arg_0x7f0a815c8640);
+uint8_t arg_0x7f44c3813640);
 # 88 "/root/tinyos/tinyos-main/tos/interfaces/Resource.nc"
 static error_t /*Msp430UsartShare0P.ArbiterC.Arbiter*/ArbiterP__0__Resource__request(
 # 54 "/root/tinyos/tinyos-main/tos/system/ArbiterP.nc"
-uint8_t arg_0x7f0a815c8640);
+uint8_t arg_0x7f44c3813640);
 # 102 "/root/tinyos/tinyos-main/tos/interfaces/Resource.nc"
 static void /*Msp430UsartShare0P.ArbiterC.Arbiter*/ArbiterP__0__Resource__default__granted(
 # 54 "/root/tinyos/tinyos-main/tos/system/ArbiterP.nc"
-uint8_t arg_0x7f0a815c8640);
+uint8_t arg_0x7f44c3813640);
 # 128 "/root/tinyos/tinyos-main/tos/interfaces/Resource.nc"
 static bool /*Msp430UsartShare0P.ArbiterC.Arbiter*/ArbiterP__0__Resource__isOwner(
 # 54 "/root/tinyos/tinyos-main/tos/system/ArbiterP.nc"
-uint8_t arg_0x7f0a815c8640);
+uint8_t arg_0x7f44c3813640);
 # 90 "/root/tinyos/tinyos-main/tos/interfaces/ArbiterInfo.nc"
 static bool /*Msp430UsartShare0P.ArbiterC.Arbiter*/ArbiterP__0__ArbiterInfo__inUse(void );
 
@@ -3163,17 +3187,17 @@ static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__TimerFrom__f
 #line 83
 static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__default__fired(
 # 48 "/root/tinyos/tinyos-main/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x7f0a8110f5d8);
+uint8_t arg_0x7f44c335b5d8);
 # 64 "/root/tinyos/tinyos-main/tos/lib/timer/Timer.nc"
 static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__startPeriodic(
 # 48 "/root/tinyos/tinyos-main/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x7f0a8110f5d8, 
+uint8_t arg_0x7f44c335b5d8, 
 # 64 "/root/tinyos/tinyos-main/tos/lib/timer/Timer.nc"
 uint32_t dt);
 #line 78
 static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__stop(
 # 48 "/root/tinyos/tinyos-main/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x7f0a8110f5d8);
+uint8_t arg_0x7f44c335b5d8);
 # 82 "/root/tinyos/tinyos-main/tos/lib/timer/Counter.nc"
 static void /*HilTimerMilliC.CounterToLocalTimeC*/CounterToLocalTimeC__1__Counter__overflow(void );
 # 52 "/root/tinyos/tinyos-main/tos/interfaces/Random.nc"
@@ -3314,19 +3338,19 @@ uint8_t len);
 # 120 "/root/tinyos/tinyos-main/tos/interfaces/Resource.nc"
 static error_t CC2420TinyosNetworkP__Resource__release(
 # 46 "/root/tinyos/tinyos-main/tos/chips/cc2420/lowpan/CC2420TinyosNetworkP.nc"
-uint8_t arg_0x7f0a80fe3298);
+uint8_t arg_0x7f44c322f298);
 # 97 "/root/tinyos/tinyos-main/tos/interfaces/Resource.nc"
 static error_t CC2420TinyosNetworkP__Resource__immediateRequest(
 # 46 "/root/tinyos/tinyos-main/tos/chips/cc2420/lowpan/CC2420TinyosNetworkP.nc"
-uint8_t arg_0x7f0a80fe3298);
+uint8_t arg_0x7f44c322f298);
 # 88 "/root/tinyos/tinyos-main/tos/interfaces/Resource.nc"
 static error_t CC2420TinyosNetworkP__Resource__request(
 # 46 "/root/tinyos/tinyos-main/tos/chips/cc2420/lowpan/CC2420TinyosNetworkP.nc"
-uint8_t arg_0x7f0a80fe3298);
+uint8_t arg_0x7f44c322f298);
 # 102 "/root/tinyos/tinyos-main/tos/interfaces/Resource.nc"
 static void CC2420TinyosNetworkP__Resource__default__granted(
 # 46 "/root/tinyos/tinyos-main/tos/chips/cc2420/lowpan/CC2420TinyosNetworkP.nc"
-uint8_t arg_0x7f0a80fe3298);
+uint8_t arg_0x7f44c322f298);
 # 125 "/root/tinyos/tinyos-main/tos/interfaces/Send.nc"
 static 
 #line 123
@@ -3399,13 +3423,13 @@ static void CC2420ActiveMessageP__CC2420Config__syncDone(error_t error);
 # 95 "/root/tinyos/tinyos-main/tos/chips/cc2420/interfaces/RadioBackoff.nc"
 static void CC2420ActiveMessageP__RadioBackoff__default__requestCca(
 # 54 "/root/tinyos/tinyos-main/tos/chips/cc2420/CC2420ActiveMessageP.nc"
-am_id_t arg_0x7f0a80f52d60, 
+am_id_t arg_0x7f44c319ed60, 
 # 95 "/root/tinyos/tinyos-main/tos/chips/cc2420/interfaces/RadioBackoff.nc"
 message_t * msg);
 #line 81
 static void CC2420ActiveMessageP__RadioBackoff__default__requestInitialBackoff(
 # 54 "/root/tinyos/tinyos-main/tos/chips/cc2420/CC2420ActiveMessageP.nc"
-am_id_t arg_0x7f0a80f52d60, 
+am_id_t arg_0x7f44c319ed60, 
 # 81 "/root/tinyos/tinyos-main/tos/chips/cc2420/interfaces/RadioBackoff.nc"
 message_t * msg);
 
@@ -3416,13 +3440,13 @@ message_t * msg);
 
 static void CC2420ActiveMessageP__RadioBackoff__default__requestCongestionBackoff(
 # 54 "/root/tinyos/tinyos-main/tos/chips/cc2420/CC2420ActiveMessageP.nc"
-am_id_t arg_0x7f0a80f52d60, 
+am_id_t arg_0x7f44c319ed60, 
 # 88 "/root/tinyos/tinyos-main/tos/chips/cc2420/interfaces/RadioBackoff.nc"
 message_t * msg);
 # 59 "/root/tinyos/tinyos-main/tos/interfaces/SendNotifier.nc"
 static void CC2420ActiveMessageP__SendNotifier__default__aboutToSend(
 # 53 "/root/tinyos/tinyos-main/tos/chips/cc2420/CC2420ActiveMessageP.nc"
-am_id_t arg_0x7f0a80f52258, 
+am_id_t arg_0x7f44c319e258, 
 # 59 "/root/tinyos/tinyos-main/tos/interfaces/SendNotifier.nc"
 am_addr_t dest, 
 #line 57
@@ -3469,7 +3493,7 @@ uint8_t len);
 # 80 "/root/tinyos/tinyos-main/tos/interfaces/AMSend.nc"
 static error_t CC2420ActiveMessageP__AMSend__send(
 # 48 "/root/tinyos/tinyos-main/tos/chips/cc2420/CC2420ActiveMessageP.nc"
-am_id_t arg_0x7f0a80f587d8, 
+am_id_t arg_0x7f44c31a47d8, 
 # 80 "/root/tinyos/tinyos-main/tos/interfaces/AMSend.nc"
 am_addr_t addr, 
 #line 71
@@ -3492,7 +3516,7 @@ message_t *
 
 CC2420ActiveMessageP__Snoop__default__receive(
 # 50 "/root/tinyos/tinyos-main/tos/chips/cc2420/CC2420ActiveMessageP.nc"
-am_id_t arg_0x7f0a80f56480, 
+am_id_t arg_0x7f44c31a1480, 
 # 71 "/root/tinyos/tinyos-main/tos/interfaces/Receive.nc"
 message_t * msg, 
 void * payload, 
@@ -3511,7 +3535,7 @@ message_t *
 
 CC2420ActiveMessageP__Receive__default__receive(
 # 49 "/root/tinyos/tinyos-main/tos/chips/cc2420/CC2420ActiveMessageP.nc"
-am_id_t arg_0x7f0a80f57908, 
+am_id_t arg_0x7f44c31a3908, 
 # 71 "/root/tinyos/tinyos-main/tos/interfaces/Receive.nc"
 message_t * msg, 
 void * payload, 
@@ -3585,7 +3609,7 @@ error_t error);
 # 110 "/root/tinyos/tinyos-main/tos/interfaces/AMSend.nc"
 static void /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__AMSend__sendDone(
 # 48 "/root/tinyos/tinyos-main/tos/system/AMQueueImplP.nc"
-am_id_t arg_0x7f0a80e95020, 
+am_id_t arg_0x7f44c30e1020, 
 # 103 "/root/tinyos/tinyos-main/tos/interfaces/AMSend.nc"
 message_t * msg, 
 
@@ -3598,7 +3622,7 @@ error_t error);
 # 75 "/root/tinyos/tinyos-main/tos/interfaces/Send.nc"
 static error_t /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__Send__send(
 # 46 "/root/tinyos/tinyos-main/tos/system/AMQueueImplP.nc"
-uint8_t arg_0x7f0a80e97e18, 
+uint8_t arg_0x7f44c30e3e18, 
 # 67 "/root/tinyos/tinyos-main/tos/interfaces/Send.nc"
 message_t * msg, 
 
@@ -3612,7 +3636,7 @@ uint8_t len);
 #line 100
 static void /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__Send__default__sendDone(
 # 46 "/root/tinyos/tinyos-main/tos/system/AMQueueImplP.nc"
-uint8_t arg_0x7f0a80e97e18, 
+uint8_t arg_0x7f44c30e3e18, 
 # 96 "/root/tinyos/tinyos-main/tos/interfaces/Send.nc"
 message_t * msg, 
 
@@ -3727,7 +3751,7 @@ static inline error_t Msp430ClockP__Init__init(void );
 # 39 "/root/tinyos/tinyos-main/tos/chips/msp430/timer/Msp430TimerEvent.nc"
 static void /*Msp430TimerC.Msp430TimerA*/Msp430TimerP__0__Event__fired(
 # 51 "/root/tinyos/tinyos-main/tos/chips/msp430/timer/Msp430TimerP.nc"
-uint8_t arg_0x7f0a82115dd0);
+uint8_t arg_0x7f44c4361dd0);
 # 48 "/root/tinyos/tinyos-main/tos/chips/msp430/timer/Msp430Timer.nc"
 static void /*Msp430TimerC.Msp430TimerA*/Msp430TimerP__0__Timer__overflow(void );
 # 62 "/root/tinyos/tinyos-main/tos/chips/msp430/timer/Msp430TimerP.nc"
@@ -3757,7 +3781,7 @@ static inline void /*Msp430TimerC.Msp430TimerA*/Msp430TimerP__0__Event__default_
 # 39 "/root/tinyos/tinyos-main/tos/chips/msp430/timer/Msp430TimerEvent.nc"
 static void /*Msp430TimerC.Msp430TimerB*/Msp430TimerP__1__Event__fired(
 # 51 "/root/tinyos/tinyos-main/tos/chips/msp430/timer/Msp430TimerP.nc"
-uint8_t arg_0x7f0a82115dd0);
+uint8_t arg_0x7f44c4361dd0);
 # 48 "/root/tinyos/tinyos-main/tos/chips/msp430/timer/Msp430Timer.nc"
 static void /*Msp430TimerC.Msp430TimerB*/Msp430TimerP__1__Timer__overflow(void );
 # 62 "/root/tinyos/tinyos-main/tos/chips/msp430/timer/Msp430TimerP.nc"
@@ -4260,7 +4284,7 @@ int main(void )   ;
 # 75 "/root/tinyos/tinyos-main/tos/interfaces/TaskBasic.nc"
 static void SchedulerBasicP__TaskBasic__runTask(
 # 56 "/root/tinyos/tinyos-main/tos/system/SchedulerBasicP.nc"
-uint8_t arg_0x7f0a82200650);
+uint8_t arg_0x7f44c444c650);
 # 76 "/root/tinyos/tinyos-main/tos/interfaces/McuSleep.nc"
 static void SchedulerBasicP__McuSleep__sleep(void );
 # 61 "/root/tinyos/tinyos-main/tos/system/SchedulerBasicP.nc"
@@ -4318,7 +4342,7 @@ static void LedsP__Led0__toggle(void );
 static void LedsP__Led0__makeOutput(void );
 #line 40
 static void LedsP__Led0__set(void );
-
+static void LedsP__Led0__clr(void );
 static void LedsP__Led1__toggle(void );
 
 
@@ -4326,7 +4350,7 @@ static void LedsP__Led1__toggle(void );
 static void LedsP__Led1__makeOutput(void );
 #line 40
 static void LedsP__Led1__set(void );
-
+static void LedsP__Led1__clr(void );
 static void LedsP__Led2__toggle(void );
 
 
@@ -4334,9 +4358,15 @@ static void LedsP__Led2__toggle(void );
 static void LedsP__Led2__makeOutput(void );
 #line 40
 static void LedsP__Led2__set(void );
+static void LedsP__Led2__clr(void );
 # 56 "/root/tinyos/tinyos-main/tos/system/LedsP.nc"
 static inline error_t LedsP__Init__init(void );
-#line 79
+#line 74
+static inline void LedsP__Leds__led0On(void );
+
+
+
+
 static inline void LedsP__Leds__led0Off(void );
 
 
@@ -4347,7 +4377,7 @@ static inline void LedsP__Leds__led0Toggle(void );
 
 
 
-
+static inline void LedsP__Leds__led1On(void );
 
 
 
@@ -4362,7 +4392,7 @@ static inline void LedsP__Leds__led1Toggle(void );
 
 
 
-
+static inline void LedsP__Leds__led2On(void );
 
 
 
@@ -4446,7 +4476,7 @@ static void /*HplMsp430GeneralIOC.P46*/HplMsp430GeneralIOP__30__IO__clr(void );
 static inline void /*HplMsp430GeneralIOC.P46*/HplMsp430GeneralIOP__30__IO__makeOutput(void );
 #line 56
 static void /*HplMsp430GeneralIOC.P54*/HplMsp430GeneralIOP__36__IO__set(void );
-
+static inline void /*HplMsp430GeneralIOC.P54*/HplMsp430GeneralIOP__36__IO__clr(void );
 static void /*HplMsp430GeneralIOC.P54*/HplMsp430GeneralIOP__36__IO__toggle(void );
 
 
@@ -4455,7 +4485,7 @@ static void /*HplMsp430GeneralIOC.P54*/HplMsp430GeneralIOP__36__IO__toggle(void 
 static inline void /*HplMsp430GeneralIOC.P54*/HplMsp430GeneralIOP__36__IO__makeOutput(void );
 #line 56
 static void /*HplMsp430GeneralIOC.P55*/HplMsp430GeneralIOP__37__IO__set(void );
-
+static inline void /*HplMsp430GeneralIOC.P55*/HplMsp430GeneralIOP__37__IO__clr(void );
 static void /*HplMsp430GeneralIOC.P55*/HplMsp430GeneralIOP__37__IO__toggle(void );
 
 
@@ -4464,7 +4494,7 @@ static void /*HplMsp430GeneralIOC.P55*/HplMsp430GeneralIOP__37__IO__toggle(void 
 static inline void /*HplMsp430GeneralIOC.P55*/HplMsp430GeneralIOP__37__IO__makeOutput(void );
 #line 56
 static void /*HplMsp430GeneralIOC.P56*/HplMsp430GeneralIOP__38__IO__set(void );
-
+static inline void /*HplMsp430GeneralIOC.P56*/HplMsp430GeneralIOP__38__IO__clr(void );
 static void /*HplMsp430GeneralIOC.P56*/HplMsp430GeneralIOP__38__IO__toggle(void );
 
 
@@ -4477,9 +4507,14 @@ static void /*PlatformLedsC.Led0Impl*/Msp430GpioC__0__HplGeneralIO__toggle(void 
 static void /*PlatformLedsC.Led0Impl*/Msp430GpioC__0__HplGeneralIO__makeOutput(void );
 #line 48
 static void /*PlatformLedsC.Led0Impl*/Msp430GpioC__0__HplGeneralIO__set(void );
+
+
+
+
+static void /*PlatformLedsC.Led0Impl*/Msp430GpioC__0__HplGeneralIO__clr(void );
 # 48 "/root/tinyos/tinyos-main/tos/chips/msp430/pins/Msp430GpioC.nc"
 static inline void /*PlatformLedsC.Led0Impl*/Msp430GpioC__0__GeneralIO__set(void );
-
+static inline void /*PlatformLedsC.Led0Impl*/Msp430GpioC__0__GeneralIO__clr(void );
 static inline void /*PlatformLedsC.Led0Impl*/Msp430GpioC__0__GeneralIO__toggle(void );
 
 
@@ -4491,9 +4526,14 @@ static void /*PlatformLedsC.Led1Impl*/Msp430GpioC__1__HplGeneralIO__toggle(void 
 static void /*PlatformLedsC.Led1Impl*/Msp430GpioC__1__HplGeneralIO__makeOutput(void );
 #line 48
 static void /*PlatformLedsC.Led1Impl*/Msp430GpioC__1__HplGeneralIO__set(void );
+
+
+
+
+static void /*PlatformLedsC.Led1Impl*/Msp430GpioC__1__HplGeneralIO__clr(void );
 # 48 "/root/tinyos/tinyos-main/tos/chips/msp430/pins/Msp430GpioC.nc"
 static inline void /*PlatformLedsC.Led1Impl*/Msp430GpioC__1__GeneralIO__set(void );
-
+static inline void /*PlatformLedsC.Led1Impl*/Msp430GpioC__1__GeneralIO__clr(void );
 static inline void /*PlatformLedsC.Led1Impl*/Msp430GpioC__1__GeneralIO__toggle(void );
 
 
@@ -4505,9 +4545,14 @@ static void /*PlatformLedsC.Led2Impl*/Msp430GpioC__2__HplGeneralIO__toggle(void 
 static void /*PlatformLedsC.Led2Impl*/Msp430GpioC__2__HplGeneralIO__makeOutput(void );
 #line 48
 static void /*PlatformLedsC.Led2Impl*/Msp430GpioC__2__HplGeneralIO__set(void );
+
+
+
+
+static void /*PlatformLedsC.Led2Impl*/Msp430GpioC__2__HplGeneralIO__clr(void );
 # 48 "/root/tinyos/tinyos-main/tos/chips/msp430/pins/Msp430GpioC.nc"
 static inline void /*PlatformLedsC.Led2Impl*/Msp430GpioC__2__GeneralIO__set(void );
-
+static inline void /*PlatformLedsC.Led2Impl*/Msp430GpioC__2__GeneralIO__clr(void );
 static inline void /*PlatformLedsC.Led2Impl*/Msp430GpioC__2__GeneralIO__toggle(void );
 
 
@@ -4558,6 +4603,8 @@ static void sbC__Timer_startgame__startPeriodic(uint32_t dt);
 static void sbC__Timer_startgame__stop(void );
 #line 64
 static void sbC__Timer_winner__startPeriodic(uint32_t dt);
+#line 64
+static void sbC__Timer_attacked__startPeriodic(uint32_t dt);
 #line 78
 static void sbC__Timer_attacked__stop(void );
 # 61 "/root/tinyos/tinyos-main/tos/interfaces/Leds.nc"
@@ -4568,7 +4615,21 @@ static void sbC__Leds__led0Off(void );
 
 
 static void sbC__Leds__led0Toggle(void );
-#line 83
+
+
+
+
+static void sbC__Leds__led1On(void );
+
+
+
+
+
+
+
+
+
+
 static void sbC__Leds__led1Toggle(void );
 #line 100
 static void sbC__Leds__led2Toggle(void );
@@ -4576,6 +4637,10 @@ static void sbC__Leds__led2Toggle(void );
 static void sbC__Leds__led1Off(void );
 #line 94
 static void sbC__Leds__led2Off(void );
+#line 56
+static void sbC__Leds__led0On(void );
+#line 89
+static void sbC__Leds__led2On(void );
 # 64 "/root/tinyos/tinyos-main/tos/lib/timer/Timer.nc"
 static void sbC__Timer_scan__startPeriodic(uint32_t dt);
 #line 78
@@ -4590,13 +4655,13 @@ int8_t sbC__fscan = 0;
 int8_t sbC__fattack = 0;
 int8_t sbC__fattacked = 0;
 int8_t sbC__fstartgame = 0;
-
+int8_t sbC__life = 100;
 bool sbC__started = FALSE;
 bool sbC__gamestarted = FALSE;
 bool sbC__busy = FALSE;
 static void sbC__m_init(void );
 static inline void sbC__m_scan(void );
-void sbC__m_attacked(int8_t arg_0x7f0a81ceaca8);
+static inline void sbC__m_attacked(int8_t arg_0x7f44c3f36ca8);
 static inline void sbC__startgame(bool f);
 
 
@@ -4655,6 +4720,10 @@ static inline void sbC__Timer_fight__fired(void );
 
 
 static inline void sbC__Timer_dead__fired(void );
+
+
+
+static inline void sbC__m_attacked(int8_t x);
 #line 275
 static inline void sbC__Timer_attack__fired(void );
 
@@ -5546,13 +5615,13 @@ uint16_t len);
 # 91 "/root/tinyos/tinyos-main/tos/chips/cc2420/interfaces/CC2420Fifo.nc"
 static void CC2420SpiP__Fifo__writeDone(
 # 46 "/root/tinyos/tinyos-main/tos/chips/cc2420/spi/CC2420SpiP.nc"
-uint8_t arg_0x7f0a81863ca8, 
+uint8_t arg_0x7f44c3aafca8, 
 # 91 "/root/tinyos/tinyos-main/tos/chips/cc2420/interfaces/CC2420Fifo.nc"
 uint8_t * data, uint8_t length, error_t error);
 #line 71
 static void CC2420SpiP__Fifo__readDone(
 # 46 "/root/tinyos/tinyos-main/tos/chips/cc2420/spi/CC2420SpiP.nc"
-uint8_t arg_0x7f0a81863ca8, 
+uint8_t arg_0x7f44c3aafca8, 
 # 71 "/root/tinyos/tinyos-main/tos/chips/cc2420/interfaces/CC2420Fifo.nc"
 uint8_t * data, uint8_t length, error_t error);
 # 24 "/root/tinyos/tinyos-main/tos/chips/cc2420/interfaces/ChipSpiResource.nc"
@@ -5579,7 +5648,7 @@ static bool CC2420SpiP__SpiResource__isOwner(void );
 #line 102
 static void CC2420SpiP__Resource__granted(
 # 45 "/root/tinyos/tinyos-main/tos/chips/cc2420/spi/CC2420SpiP.nc"
-uint8_t arg_0x7f0a81864a68);
+uint8_t arg_0x7f44c3ab0a68);
 # 67 "/root/tinyos/tinyos-main/tos/interfaces/TaskBasic.nc"
 static error_t CC2420SpiP__grant__postTask(void );
 # 88 "/root/tinyos/tinyos-main/tos/chips/cc2420/spi/CC2420SpiP.nc"
@@ -5747,7 +5816,7 @@ static bool StateImplP__State__isState(uint8_t id, uint8_t myState);
 # 82 "/root/tinyos/tinyos-main/tos/interfaces/SpiPacket.nc"
 static void /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__SpiPacket__sendDone(
 # 79 "/root/tinyos/tinyos-main/tos/chips/msp430/usart/Msp430SpiNoDmaP.nc"
-uint8_t arg_0x7f0a817642f0, 
+uint8_t arg_0x7f44c39b02f0, 
 # 75 "/root/tinyos/tinyos-main/tos/interfaces/SpiPacket.nc"
 uint8_t * txBuf, 
 uint8_t * rxBuf, 
@@ -5761,7 +5830,7 @@ error_t error);
 # 39 "/root/tinyos/tinyos-main/tos/chips/msp430/usart/Msp430SpiConfigure.nc"
 static msp430_spi_union_config_t */*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__Msp430SpiConfigure__getConfig(
 # 82 "/root/tinyos/tinyos-main/tos/chips/msp430/usart/Msp430SpiNoDmaP.nc"
-uint8_t arg_0x7f0a817612f0);
+uint8_t arg_0x7f44c39ad2f0);
 # 180 "/root/tinyos/tinyos-main/tos/chips/msp430/usart/HplMsp430Usart.nc"
 static void /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__Usart__enableRxIntr(void );
 #line 197
@@ -5783,23 +5852,23 @@ static void /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__Usart__disableSpi(void 
 # 120 "/root/tinyos/tinyos-main/tos/interfaces/Resource.nc"
 static error_t /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__UsartResource__release(
 # 81 "/root/tinyos/tinyos-main/tos/chips/msp430/usart/Msp430SpiNoDmaP.nc"
-uint8_t arg_0x7f0a817630c8);
+uint8_t arg_0x7f44c39ae0c8);
 # 97 "/root/tinyos/tinyos-main/tos/interfaces/Resource.nc"
 static error_t /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__UsartResource__immediateRequest(
 # 81 "/root/tinyos/tinyos-main/tos/chips/msp430/usart/Msp430SpiNoDmaP.nc"
-uint8_t arg_0x7f0a817630c8);
+uint8_t arg_0x7f44c39ae0c8);
 # 88 "/root/tinyos/tinyos-main/tos/interfaces/Resource.nc"
 static error_t /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__UsartResource__request(
 # 81 "/root/tinyos/tinyos-main/tos/chips/msp430/usart/Msp430SpiNoDmaP.nc"
-uint8_t arg_0x7f0a817630c8);
+uint8_t arg_0x7f44c39ae0c8);
 # 128 "/root/tinyos/tinyos-main/tos/interfaces/Resource.nc"
 static bool /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__UsartResource__isOwner(
 # 81 "/root/tinyos/tinyos-main/tos/chips/msp430/usart/Msp430SpiNoDmaP.nc"
-uint8_t arg_0x7f0a817630c8);
+uint8_t arg_0x7f44c39ae0c8);
 # 102 "/root/tinyos/tinyos-main/tos/interfaces/Resource.nc"
 static void /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__Resource__granted(
 # 75 "/root/tinyos/tinyos-main/tos/chips/msp430/usart/Msp430SpiNoDmaP.nc"
-uint8_t arg_0x7f0a817672f0);
+uint8_t arg_0x7f44c39b32f0);
 # 67 "/root/tinyos/tinyos-main/tos/interfaces/TaskBasic.nc"
 static error_t /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__signalDone_task__postTask(void );
 # 102 "/root/tinyos/tinyos-main/tos/chips/msp430/usart/Msp430SpiNoDmaP.nc"
@@ -6029,17 +6098,17 @@ static uint8_t /*Msp430UsartShare0P.UsartShareP*/Msp430UsartShareP__0__ArbiterIn
 # 54 "/root/tinyos/tinyos-main/tos/chips/msp430/usart/HplMsp430UsartInterrupts.nc"
 static void /*Msp430UsartShare0P.UsartShareP*/Msp430UsartShareP__0__Interrupts__rxDone(
 # 39 "/root/tinyos/tinyos-main/tos/chips/msp430/usart/Msp430UsartShareP.nc"
-uint8_t arg_0x7f0a81605800, 
+uint8_t arg_0x7f44c3851800, 
 # 54 "/root/tinyos/tinyos-main/tos/chips/msp430/usart/HplMsp430UsartInterrupts.nc"
 uint8_t data);
 #line 49
 static void /*Msp430UsartShare0P.UsartShareP*/Msp430UsartShareP__0__Interrupts__txDone(
 # 39 "/root/tinyos/tinyos-main/tos/chips/msp430/usart/Msp430UsartShareP.nc"
-uint8_t arg_0x7f0a81605800);
+uint8_t arg_0x7f44c3851800);
 # 39 "/root/tinyos/tinyos-main/tos/chips/msp430/usart/HplMsp430I2CInterrupts.nc"
 static void /*Msp430UsartShare0P.UsartShareP*/Msp430UsartShareP__0__I2CInterrupts__fired(
 # 40 "/root/tinyos/tinyos-main/tos/chips/msp430/usart/Msp430UsartShareP.nc"
-uint8_t arg_0x7f0a81604620);
+uint8_t arg_0x7f44c3850620);
 
 
 
@@ -6094,19 +6163,19 @@ static inline error_t /*Msp430UsartShare0P.ArbiterC.Queue*/FcfsResourceQueueC__1
 # 53 "/root/tinyos/tinyos-main/tos/interfaces/ResourceRequested.nc"
 static void /*Msp430UsartShare0P.ArbiterC.Arbiter*/ArbiterP__0__ResourceRequested__requested(
 # 55 "/root/tinyos/tinyos-main/tos/system/ArbiterP.nc"
-uint8_t arg_0x7f0a815c67e8);
+uint8_t arg_0x7f44c38127e8);
 # 61 "/root/tinyos/tinyos-main/tos/interfaces/ResourceRequested.nc"
 static void /*Msp430UsartShare0P.ArbiterC.Arbiter*/ArbiterP__0__ResourceRequested__immediateRequested(
 # 55 "/root/tinyos/tinyos-main/tos/system/ArbiterP.nc"
-uint8_t arg_0x7f0a815c67e8);
+uint8_t arg_0x7f44c38127e8);
 # 65 "/root/tinyos/tinyos-main/tos/interfaces/ResourceConfigure.nc"
 static void /*Msp430UsartShare0P.ArbiterC.Arbiter*/ArbiterP__0__ResourceConfigure__unconfigure(
 # 60 "/root/tinyos/tinyos-main/tos/system/ArbiterP.nc"
-uint8_t arg_0x7f0a815c49b8);
+uint8_t arg_0x7f44c38109b8);
 # 59 "/root/tinyos/tinyos-main/tos/interfaces/ResourceConfigure.nc"
 static void /*Msp430UsartShare0P.ArbiterC.Arbiter*/ArbiterP__0__ResourceConfigure__configure(
 # 60 "/root/tinyos/tinyos-main/tos/system/ArbiterP.nc"
-uint8_t arg_0x7f0a815c49b8);
+uint8_t arg_0x7f44c38109b8);
 # 79 "/root/tinyos/tinyos-main/tos/interfaces/ResourceQueue.nc"
 static error_t /*Msp430UsartShare0P.ArbiterC.Arbiter*/ArbiterP__0__Queue__enqueue(resource_client_id_t id);
 #line 53
@@ -6122,7 +6191,7 @@ static void /*Msp430UsartShare0P.ArbiterC.Arbiter*/ArbiterP__0__ResourceDefaultO
 # 102 "/root/tinyos/tinyos-main/tos/interfaces/Resource.nc"
 static void /*Msp430UsartShare0P.ArbiterC.Arbiter*/ArbiterP__0__Resource__granted(
 # 54 "/root/tinyos/tinyos-main/tos/system/ArbiterP.nc"
-uint8_t arg_0x7f0a815c8640);
+uint8_t arg_0x7f44c3813640);
 # 67 "/root/tinyos/tinyos-main/tos/interfaces/TaskBasic.nc"
 static error_t /*Msp430UsartShare0P.ArbiterC.Arbiter*/ArbiterP__0__grantedTask__postTask(void );
 # 75 "/root/tinyos/tinyos-main/tos/system/ArbiterP.nc"
@@ -7095,7 +7164,7 @@ static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__TimerFrom__s
 
 static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__fired(
 # 48 "/root/tinyos/tinyos-main/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x7f0a8110f5d8);
+uint8_t arg_0x7f44c335b5d8);
 #line 71
 enum /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0____nesc_unnamed4339 {
 #line 71
@@ -7373,7 +7442,7 @@ uint8_t len);
 # 102 "/root/tinyos/tinyos-main/tos/interfaces/Resource.nc"
 static void CC2420TinyosNetworkP__Resource__granted(
 # 46 "/root/tinyos/tinyos-main/tos/chips/cc2420/lowpan/CC2420TinyosNetworkP.nc"
-uint8_t arg_0x7f0a80fe3298);
+uint8_t arg_0x7f44c322f298);
 # 100 "/root/tinyos/tinyos-main/tos/interfaces/Send.nc"
 static void CC2420TinyosNetworkP__BareSend__sendDone(
 #line 96
@@ -7538,13 +7607,13 @@ static uint16_t CC2420ActiveMessageP__CC2420Config__getPanAddr(void );
 # 95 "/root/tinyos/tinyos-main/tos/chips/cc2420/interfaces/RadioBackoff.nc"
 static void CC2420ActiveMessageP__RadioBackoff__requestCca(
 # 54 "/root/tinyos/tinyos-main/tos/chips/cc2420/CC2420ActiveMessageP.nc"
-am_id_t arg_0x7f0a80f52d60, 
+am_id_t arg_0x7f44c319ed60, 
 # 95 "/root/tinyos/tinyos-main/tos/chips/cc2420/interfaces/RadioBackoff.nc"
 message_t * msg);
 #line 81
 static void CC2420ActiveMessageP__RadioBackoff__requestInitialBackoff(
 # 54 "/root/tinyos/tinyos-main/tos/chips/cc2420/CC2420ActiveMessageP.nc"
-am_id_t arg_0x7f0a80f52d60, 
+am_id_t arg_0x7f44c319ed60, 
 # 81 "/root/tinyos/tinyos-main/tos/chips/cc2420/interfaces/RadioBackoff.nc"
 message_t * msg);
 
@@ -7555,13 +7624,13 @@ message_t * msg);
 
 static void CC2420ActiveMessageP__RadioBackoff__requestCongestionBackoff(
 # 54 "/root/tinyos/tinyos-main/tos/chips/cc2420/CC2420ActiveMessageP.nc"
-am_id_t arg_0x7f0a80f52d60, 
+am_id_t arg_0x7f44c319ed60, 
 # 88 "/root/tinyos/tinyos-main/tos/chips/cc2420/interfaces/RadioBackoff.nc"
 message_t * msg);
 # 59 "/root/tinyos/tinyos-main/tos/interfaces/SendNotifier.nc"
 static void CC2420ActiveMessageP__SendNotifier__aboutToSend(
 # 53 "/root/tinyos/tinyos-main/tos/chips/cc2420/CC2420ActiveMessageP.nc"
-am_id_t arg_0x7f0a80f52258, 
+am_id_t arg_0x7f44c319e258, 
 # 59 "/root/tinyos/tinyos-main/tos/interfaces/SendNotifier.nc"
 am_addr_t dest, 
 #line 57
@@ -7569,7 +7638,7 @@ message_t * msg);
 # 110 "/root/tinyos/tinyos-main/tos/interfaces/AMSend.nc"
 static void CC2420ActiveMessageP__AMSend__sendDone(
 # 48 "/root/tinyos/tinyos-main/tos/chips/cc2420/CC2420ActiveMessageP.nc"
-am_id_t arg_0x7f0a80f587d8, 
+am_id_t arg_0x7f44c31a47d8, 
 # 103 "/root/tinyos/tinyos-main/tos/interfaces/AMSend.nc"
 message_t * msg, 
 
@@ -7588,7 +7657,7 @@ message_t *
 
 CC2420ActiveMessageP__Snoop__receive(
 # 50 "/root/tinyos/tinyos-main/tos/chips/cc2420/CC2420ActiveMessageP.nc"
-am_id_t arg_0x7f0a80f56480, 
+am_id_t arg_0x7f44c31a1480, 
 # 71 "/root/tinyos/tinyos-main/tos/interfaces/Receive.nc"
 message_t * msg, 
 void * payload, 
@@ -7611,7 +7680,7 @@ message_t *
 
 CC2420ActiveMessageP__Receive__receive(
 # 49 "/root/tinyos/tinyos-main/tos/chips/cc2420/CC2420ActiveMessageP.nc"
-am_id_t arg_0x7f0a80f57908, 
+am_id_t arg_0x7f44c31a3908, 
 # 71 "/root/tinyos/tinyos-main/tos/interfaces/Receive.nc"
 message_t * msg, 
 void * payload, 
@@ -7797,7 +7866,7 @@ static inline void /*sbAppC.AMSenderC.SenderC.AMQueueEntryP*/AMQueueEntryP__0__S
 # 80 "/root/tinyos/tinyos-main/tos/interfaces/AMSend.nc"
 static error_t /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__AMSend__send(
 # 48 "/root/tinyos/tinyos-main/tos/system/AMQueueImplP.nc"
-am_id_t arg_0x7f0a80e95020, 
+am_id_t arg_0x7f44c30e1020, 
 # 80 "/root/tinyos/tinyos-main/tos/interfaces/AMSend.nc"
 am_addr_t addr, 
 #line 71
@@ -7814,7 +7883,7 @@ uint8_t len);
 # 100 "/root/tinyos/tinyos-main/tos/interfaces/Send.nc"
 static void /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__Send__sendDone(
 # 46 "/root/tinyos/tinyos-main/tos/system/AMQueueImplP.nc"
-uint8_t arg_0x7f0a80e97e18, 
+uint8_t arg_0x7f44c30e3e18, 
 # 96 "/root/tinyos/tinyos-main/tos/interfaces/Send.nc"
 message_t * msg, 
 
@@ -7959,9 +8028,9 @@ static inline void /*Msp430TimerC.Msp430TimerA*/Msp430TimerP__0__Event__default_
 }
 
 # 39 "/root/tinyos/tinyos-main/tos/chips/msp430/timer/Msp430TimerEvent.nc"
-inline static void /*Msp430TimerC.Msp430TimerA*/Msp430TimerP__0__Event__fired(uint8_t arg_0x7f0a82115dd0){
+inline static void /*Msp430TimerC.Msp430TimerA*/Msp430TimerP__0__Event__fired(uint8_t arg_0x7f44c4361dd0){
 #line 39
-  switch (arg_0x7f0a82115dd0) {
+  switch (arg_0x7f44c4361dd0) {
 #line 39
     case 0:
 #line 39
@@ -7989,7 +8058,7 @@ inline static void /*Msp430TimerC.Msp430TimerA*/Msp430TimerP__0__Event__fired(ui
 #line 39
     default:
 #line 39
-      /*Msp430TimerC.Msp430TimerA*/Msp430TimerP__0__Event__default__fired(arg_0x7f0a82115dd0);
+      /*Msp430TimerC.Msp430TimerA*/Msp430TimerP__0__Event__default__fired(arg_0x7f44c4361dd0);
 #line 39
       break;
 #line 39
@@ -8986,9 +9055,9 @@ message_t *msg)
 }
 
 # 88 "/root/tinyos/tinyos-main/tos/chips/cc2420/interfaces/RadioBackoff.nc"
-inline static void CC2420ActiveMessageP__RadioBackoff__requestCongestionBackoff(am_id_t arg_0x7f0a80f52d60, message_t * msg){
+inline static void CC2420ActiveMessageP__RadioBackoff__requestCongestionBackoff(am_id_t arg_0x7f44c319ed60, message_t * msg){
 #line 88
-    CC2420ActiveMessageP__RadioBackoff__default__requestCongestionBackoff(arg_0x7f0a80f52d60, msg);
+    CC2420ActiveMessageP__RadioBackoff__default__requestCongestionBackoff(arg_0x7f44c319ed60, msg);
 #line 88
 }
 #line 88
@@ -9098,13 +9167,13 @@ static inline bool /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__UsartResource__d
 }
 
 # 128 "/root/tinyos/tinyos-main/tos/interfaces/Resource.nc"
-inline static bool /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__UsartResource__isOwner(uint8_t arg_0x7f0a817630c8){
+inline static bool /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__UsartResource__isOwner(uint8_t arg_0x7f44c39ae0c8){
 #line 128
   unsigned char __nesc_result;
 #line 128
 
 #line 128
-  switch (arg_0x7f0a817630c8) {
+  switch (arg_0x7f44c39ae0c8) {
 #line 128
     case /*CC2420SpiWireC.HplCC2420SpiC.SpiC*/Msp430Spi0C__0__CLIENT_ID:
 #line 128
@@ -9114,7 +9183,7 @@ inline static bool /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__UsartResource__i
 #line 128
     default:
 #line 128
-      __nesc_result = /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__UsartResource__default__isOwner(arg_0x7f0a817630c8);
+      __nesc_result = /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__UsartResource__default__isOwner(arg_0x7f44c39ae0c8);
 #line 128
       break;
 #line 128
@@ -9156,13 +9225,13 @@ static inline msp430_spi_union_config_t */*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDma
 }
 
 # 39 "/root/tinyos/tinyos-main/tos/chips/msp430/usart/Msp430SpiConfigure.nc"
-inline static msp430_spi_union_config_t */*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__Msp430SpiConfigure__getConfig(uint8_t arg_0x7f0a817612f0){
+inline static msp430_spi_union_config_t */*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__Msp430SpiConfigure__getConfig(uint8_t arg_0x7f44c39ad2f0){
 #line 39
   union __nesc_unnamed4281 *__nesc_result;
 #line 39
 
 #line 39
-    __nesc_result = /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__Msp430SpiConfigure__default__getConfig(arg_0x7f0a817612f0);
+    __nesc_result = /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__Msp430SpiConfigure__default__getConfig(arg_0x7f44c39ad2f0);
 #line 39
 
 #line 39
@@ -9191,9 +9260,9 @@ static inline void /*Msp430UsartShare0P.ArbiterC.Arbiter*/ArbiterP__0__ResourceC
 }
 
 # 59 "/root/tinyos/tinyos-main/tos/interfaces/ResourceConfigure.nc"
-inline static void /*Msp430UsartShare0P.ArbiterC.Arbiter*/ArbiterP__0__ResourceConfigure__configure(uint8_t arg_0x7f0a815c49b8){
+inline static void /*Msp430UsartShare0P.ArbiterC.Arbiter*/ArbiterP__0__ResourceConfigure__configure(uint8_t arg_0x7f44c38109b8){
 #line 59
-  switch (arg_0x7f0a815c49b8) {
+  switch (arg_0x7f44c38109b8) {
 #line 59
     case /*CC2420SpiWireC.HplCC2420SpiC.SpiC.UsartC*/Msp430Usart0C__0__CLIENT_ID:
 #line 59
@@ -9203,7 +9272,7 @@ inline static void /*Msp430UsartShare0P.ArbiterC.Arbiter*/ArbiterP__0__ResourceC
 #line 59
     default:
 #line 59
-      /*Msp430UsartShare0P.ArbiterC.Arbiter*/ArbiterP__0__ResourceConfigure__default__configure(arg_0x7f0a815c49b8);
+      /*Msp430UsartShare0P.ArbiterC.Arbiter*/ArbiterP__0__ResourceConfigure__default__configure(arg_0x7f44c38109b8);
 #line 59
       break;
 #line 59
@@ -9232,9 +9301,9 @@ static inline void /*Msp430UsartShare0P.ArbiterC.Arbiter*/ArbiterP__0__ResourceR
 }
 
 # 61 "/root/tinyos/tinyos-main/tos/interfaces/ResourceRequested.nc"
-inline static void /*Msp430UsartShare0P.ArbiterC.Arbiter*/ArbiterP__0__ResourceRequested__immediateRequested(uint8_t arg_0x7f0a815c67e8){
+inline static void /*Msp430UsartShare0P.ArbiterC.Arbiter*/ArbiterP__0__ResourceRequested__immediateRequested(uint8_t arg_0x7f44c38127e8){
 #line 61
-    /*Msp430UsartShare0P.ArbiterC.Arbiter*/ArbiterP__0__ResourceRequested__default__immediateRequested(arg_0x7f0a815c67e8);
+    /*Msp430UsartShare0P.ArbiterC.Arbiter*/ArbiterP__0__ResourceRequested__default__immediateRequested(arg_0x7f44c38127e8);
 #line 61
 }
 #line 61
@@ -9280,13 +9349,13 @@ static inline error_t /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__UsartResource
 }
 
 # 97 "/root/tinyos/tinyos-main/tos/interfaces/Resource.nc"
-inline static error_t /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__UsartResource__immediateRequest(uint8_t arg_0x7f0a817630c8){
+inline static error_t /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__UsartResource__immediateRequest(uint8_t arg_0x7f44c39ae0c8){
 #line 97
   unsigned char __nesc_result;
 #line 97
 
 #line 97
-  switch (arg_0x7f0a817630c8) {
+  switch (arg_0x7f44c39ae0c8) {
 #line 97
     case /*CC2420SpiWireC.HplCC2420SpiC.SpiC*/Msp430Spi0C__0__CLIENT_ID:
 #line 97
@@ -9296,7 +9365,7 @@ inline static error_t /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__UsartResource
 #line 97
     default:
 #line 97
-      __nesc_result = /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__UsartResource__default__immediateRequest(arg_0x7f0a817630c8);
+      __nesc_result = /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__UsartResource__default__immediateRequest(arg_0x7f44c39ae0c8);
 #line 97
       break;
 #line 97
@@ -9678,9 +9747,9 @@ static inline void /*Msp430UsartShare0P.ArbiterC.Arbiter*/ArbiterP__0__ResourceR
 }
 
 # 53 "/root/tinyos/tinyos-main/tos/interfaces/ResourceRequested.nc"
-inline static void /*Msp430UsartShare0P.ArbiterC.Arbiter*/ArbiterP__0__ResourceRequested__requested(uint8_t arg_0x7f0a815c67e8){
+inline static void /*Msp430UsartShare0P.ArbiterC.Arbiter*/ArbiterP__0__ResourceRequested__requested(uint8_t arg_0x7f44c38127e8){
 #line 53
-    /*Msp430UsartShare0P.ArbiterC.Arbiter*/ArbiterP__0__ResourceRequested__default__requested(arg_0x7f0a815c67e8);
+    /*Msp430UsartShare0P.ArbiterC.Arbiter*/ArbiterP__0__ResourceRequested__default__requested(arg_0x7f44c38127e8);
 #line 53
 }
 #line 53
@@ -9734,13 +9803,13 @@ static inline error_t /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__UsartResource
 }
 
 # 88 "/root/tinyos/tinyos-main/tos/interfaces/Resource.nc"
-inline static error_t /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__UsartResource__request(uint8_t arg_0x7f0a817630c8){
+inline static error_t /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__UsartResource__request(uint8_t arg_0x7f44c39ae0c8){
 #line 88
   unsigned char __nesc_result;
 #line 88
 
 #line 88
-  switch (arg_0x7f0a817630c8) {
+  switch (arg_0x7f44c39ae0c8) {
 #line 88
     case /*CC2420SpiWireC.HplCC2420SpiC.SpiC*/Msp430Spi0C__0__CLIENT_ID:
 #line 88
@@ -9750,7 +9819,7 @@ inline static error_t /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__UsartResource
 #line 88
     default:
 #line 88
-      __nesc_result = /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__UsartResource__default__request(arg_0x7f0a817630c8);
+      __nesc_result = /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__UsartResource__default__request(arg_0x7f44c39ae0c8);
 #line 88
       break;
 #line 88
@@ -9934,9 +10003,9 @@ static inline void /*Msp430UsartShare0P.ArbiterC.Arbiter*/ArbiterP__0__ResourceC
 }
 
 # 65 "/root/tinyos/tinyos-main/tos/interfaces/ResourceConfigure.nc"
-inline static void /*Msp430UsartShare0P.ArbiterC.Arbiter*/ArbiterP__0__ResourceConfigure__unconfigure(uint8_t arg_0x7f0a815c49b8){
+inline static void /*Msp430UsartShare0P.ArbiterC.Arbiter*/ArbiterP__0__ResourceConfigure__unconfigure(uint8_t arg_0x7f44c38109b8){
 #line 65
-  switch (arg_0x7f0a815c49b8) {
+  switch (arg_0x7f44c38109b8) {
 #line 65
     case /*CC2420SpiWireC.HplCC2420SpiC.SpiC.UsartC*/Msp430Usart0C__0__CLIENT_ID:
 #line 65
@@ -9946,7 +10015,7 @@ inline static void /*Msp430UsartShare0P.ArbiterC.Arbiter*/ArbiterP__0__ResourceC
 #line 65
     default:
 #line 65
-      /*Msp430UsartShare0P.ArbiterC.Arbiter*/ArbiterP__0__ResourceConfigure__default__unconfigure(arg_0x7f0a815c49b8);
+      /*Msp430UsartShare0P.ArbiterC.Arbiter*/ArbiterP__0__ResourceConfigure__default__unconfigure(arg_0x7f44c38109b8);
 #line 65
       break;
 #line 65
@@ -10097,13 +10166,13 @@ static inline error_t /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__UsartResource
 }
 
 # 120 "/root/tinyos/tinyos-main/tos/interfaces/Resource.nc"
-inline static error_t /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__UsartResource__release(uint8_t arg_0x7f0a817630c8){
+inline static error_t /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__UsartResource__release(uint8_t arg_0x7f44c39ae0c8){
 #line 120
   unsigned char __nesc_result;
 #line 120
 
 #line 120
-  switch (arg_0x7f0a817630c8) {
+  switch (arg_0x7f44c39ae0c8) {
 #line 120
     case /*CC2420SpiWireC.HplCC2420SpiC.SpiC*/Msp430Spi0C__0__CLIENT_ID:
 #line 120
@@ -10113,7 +10182,7 @@ inline static error_t /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__UsartResource
 #line 120
     default:
 #line 120
-      __nesc_result = /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__UsartResource__default__release(arg_0x7f0a817630c8);
+      __nesc_result = /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__UsartResource__default__release(arg_0x7f44c39ae0c8);
 #line 120
       break;
 #line 120
@@ -12232,9 +12301,9 @@ static inline void /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__Send__default__send
 }
 
 # 100 "/root/tinyos/tinyos-main/tos/interfaces/Send.nc"
-inline static void /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__Send__sendDone(uint8_t arg_0x7f0a80e97e18, message_t * msg, error_t error){
+inline static void /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__Send__sendDone(uint8_t arg_0x7f44c30e3e18, message_t * msg, error_t error){
 #line 100
-  switch (arg_0x7f0a80e97e18) {
+  switch (arg_0x7f44c30e3e18) {
 #line 100
     case 0U:
 #line 100
@@ -12244,7 +12313,7 @@ inline static void /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__Send__sendDone(uint
 #line 100
     default:
 #line 100
-      /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__Send__default__sendDone(arg_0x7f0a80e97e18, msg, error);
+      /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__Send__default__sendDone(arg_0x7f44c30e3e18, msg, error);
 #line 100
       break;
 #line 100
@@ -12305,13 +12374,13 @@ inline static error_t /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__errorTask__postT
 }
 #line 67
 # 80 "/root/tinyos/tinyos-main/tos/interfaces/AMSend.nc"
-inline static error_t /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__AMSend__send(am_id_t arg_0x7f0a80e95020, am_addr_t addr, message_t * msg, uint8_t len){
+inline static error_t /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__AMSend__send(am_id_t arg_0x7f44c30e1020, am_addr_t addr, message_t * msg, uint8_t len){
 #line 80
   unsigned char __nesc_result;
 #line 80
 
 #line 80
-  __nesc_result = CC2420ActiveMessageP__AMSend__send(arg_0x7f0a80e95020, addr, msg, len);
+  __nesc_result = CC2420ActiveMessageP__AMSend__send(arg_0x7f44c30e1020, addr, msg, len);
 #line 80
 
 #line 80
@@ -12610,9 +12679,9 @@ static inline void CC2420ActiveMessageP__SendNotifier__default__aboutToSend(am_i
 }
 
 # 59 "/root/tinyos/tinyos-main/tos/interfaces/SendNotifier.nc"
-inline static void CC2420ActiveMessageP__SendNotifier__aboutToSend(am_id_t arg_0x7f0a80f52258, am_addr_t dest, message_t * msg){
+inline static void CC2420ActiveMessageP__SendNotifier__aboutToSend(am_id_t arg_0x7f44c319e258, am_addr_t dest, message_t * msg){
 #line 59
-    CC2420ActiveMessageP__SendNotifier__default__aboutToSend(arg_0x7f0a80f52258, dest, msg);
+    CC2420ActiveMessageP__SendNotifier__default__aboutToSend(arg_0x7f44c319e258, dest, msg);
 #line 59
 }
 #line 59
@@ -12788,9 +12857,9 @@ message_t *msg)
 }
 
 # 95 "/root/tinyos/tinyos-main/tos/chips/cc2420/interfaces/RadioBackoff.nc"
-inline static void CC2420ActiveMessageP__RadioBackoff__requestCca(am_id_t arg_0x7f0a80f52d60, message_t * msg){
+inline static void CC2420ActiveMessageP__RadioBackoff__requestCca(am_id_t arg_0x7f44c319ed60, message_t * msg){
 #line 95
-    CC2420ActiveMessageP__RadioBackoff__default__requestCca(arg_0x7f0a80f52d60, msg);
+    CC2420ActiveMessageP__RadioBackoff__default__requestCca(arg_0x7f44c319ed60, msg);
 #line 95
 }
 #line 95
@@ -13321,9 +13390,9 @@ static inline void CC2420TinyosNetworkP__Resource__default__granted(uint8_t clie
 }
 
 # 102 "/root/tinyos/tinyos-main/tos/interfaces/Resource.nc"
-inline static void CC2420TinyosNetworkP__Resource__granted(uint8_t arg_0x7f0a80fe3298){
+inline static void CC2420TinyosNetworkP__Resource__granted(uint8_t arg_0x7f44c322f298){
 #line 102
-  switch (arg_0x7f0a80fe3298) {
+  switch (arg_0x7f44c322f298) {
 #line 102
     case CC2420ActiveMessageC__CC2420_AM_SEND_ID:
 #line 102
@@ -13333,7 +13402,7 @@ inline static void CC2420TinyosNetworkP__Resource__granted(uint8_t arg_0x7f0a80f
 #line 102
     default:
 #line 102
-      CC2420TinyosNetworkP__Resource__default__granted(arg_0x7f0a80fe3298);
+      CC2420TinyosNetworkP__Resource__default__granted(arg_0x7f44c322f298);
 #line 102
       break;
 #line 102
@@ -13980,9 +14049,9 @@ static inline void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer
 }
 
 # 83 "/root/tinyos/tinyos-main/tos/lib/timer/Timer.nc"
-inline static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__fired(uint8_t arg_0x7f0a8110f5d8){
+inline static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__fired(uint8_t arg_0x7f44c335b5d8){
 #line 83
-  switch (arg_0x7f0a8110f5d8) {
+  switch (arg_0x7f44c335b5d8) {
 #line 83
     case 1U:
 #line 83
@@ -14034,7 +14103,7 @@ inline static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer
 #line 83
     default:
 #line 83
-      /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__default__fired(arg_0x7f0a8110f5d8);
+      /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__default__fired(arg_0x7f44c335b5d8);
 #line 83
       break;
 #line 83
@@ -14287,13 +14356,13 @@ static inline message_t *CC2420ActiveMessageP__Snoop__default__receive(am_id_t i
 }
 
 # 78 "/root/tinyos/tinyos-main/tos/interfaces/Receive.nc"
-inline static message_t * CC2420ActiveMessageP__Snoop__receive(am_id_t arg_0x7f0a80f56480, message_t * msg, void * payload, uint8_t len){
+inline static message_t * CC2420ActiveMessageP__Snoop__receive(am_id_t arg_0x7f44c31a1480, message_t * msg, void * payload, uint8_t len){
 #line 78
   nx_struct message_t *__nesc_result;
 #line 78
 
 #line 78
-    __nesc_result = CC2420ActiveMessageP__Snoop__default__receive(arg_0x7f0a80f56480, msg, payload, len);
+    __nesc_result = CC2420ActiveMessageP__Snoop__default__receive(arg_0x7f44c31a1480, msg, payload, len);
 #line 78
 
 #line 78
@@ -14315,7 +14384,188 @@ inline static void sbC__Timer_fight__stop(void ){
 #line 78
 }
 #line 78
+# 57 "/root/tinyos/tinyos-main/tos/chips/msp430/pins/HplMsp430GeneralIOP.nc"
+static inline void /*HplMsp430GeneralIOC.P56*/HplMsp430GeneralIOP__38__IO__clr(void )
+#line 57
+{
+#line 57
+  { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
+#line 57
+    * (volatile uint8_t * )49U &= ~(0x01 << 6);
+#line 57
+    __nesc_atomic_end(__nesc_atomic); }
+}
+
+# 53 "/root/tinyos/tinyos-main/tos/chips/msp430/pins/HplMsp430GeneralIO.nc"
+inline static void /*PlatformLedsC.Led2Impl*/Msp430GpioC__2__HplGeneralIO__clr(void ){
+#line 53
+  /*HplMsp430GeneralIOC.P56*/HplMsp430GeneralIOP__38__IO__clr();
+#line 53
+}
+#line 53
+# 49 "/root/tinyos/tinyos-main/tos/chips/msp430/pins/Msp430GpioC.nc"
+static inline void /*PlatformLedsC.Led2Impl*/Msp430GpioC__2__GeneralIO__clr(void )
+#line 49
+{
+#line 49
+  /*PlatformLedsC.Led2Impl*/Msp430GpioC__2__HplGeneralIO__clr();
+}
+
+# 41 "/root/tinyos/tinyos-main/tos/interfaces/GeneralIO.nc"
+inline static void LedsP__Led2__clr(void ){
+#line 41
+  /*PlatformLedsC.Led2Impl*/Msp430GpioC__2__GeneralIO__clr();
+#line 41
+}
+#line 41
+# 104 "/root/tinyos/tinyos-main/tos/system/LedsP.nc"
+static inline void LedsP__Leds__led2On(void )
+#line 104
+{
+  LedsP__Led2__clr();
+  ;
+#line 106
+  ;
+}
+
+# 89 "/root/tinyos/tinyos-main/tos/interfaces/Leds.nc"
+inline static void sbC__Leds__led2On(void ){
+#line 89
+  LedsP__Leds__led2On();
+#line 89
+}
+#line 89
+# 57 "/root/tinyos/tinyos-main/tos/chips/msp430/pins/HplMsp430GeneralIOP.nc"
+static inline void /*HplMsp430GeneralIOC.P55*/HplMsp430GeneralIOP__37__IO__clr(void )
+#line 57
+{
+#line 57
+  { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
+#line 57
+    * (volatile uint8_t * )49U &= ~(0x01 << 5);
+#line 57
+    __nesc_atomic_end(__nesc_atomic); }
+}
+
+# 53 "/root/tinyos/tinyos-main/tos/chips/msp430/pins/HplMsp430GeneralIO.nc"
+inline static void /*PlatformLedsC.Led1Impl*/Msp430GpioC__1__HplGeneralIO__clr(void ){
+#line 53
+  /*HplMsp430GeneralIOC.P55*/HplMsp430GeneralIOP__37__IO__clr();
+#line 53
+}
+#line 53
+# 49 "/root/tinyos/tinyos-main/tos/chips/msp430/pins/Msp430GpioC.nc"
+static inline void /*PlatformLedsC.Led1Impl*/Msp430GpioC__1__GeneralIO__clr(void )
+#line 49
+{
+#line 49
+  /*PlatformLedsC.Led1Impl*/Msp430GpioC__1__HplGeneralIO__clr();
+}
+
+# 41 "/root/tinyos/tinyos-main/tos/interfaces/GeneralIO.nc"
+inline static void LedsP__Led1__clr(void ){
+#line 41
+  /*PlatformLedsC.Led1Impl*/Msp430GpioC__1__GeneralIO__clr();
+#line 41
+}
+#line 41
+# 89 "/root/tinyos/tinyos-main/tos/system/LedsP.nc"
+static inline void LedsP__Leds__led1On(void )
+#line 89
+{
+  LedsP__Led1__clr();
+  ;
+#line 91
+  ;
+}
+
+# 72 "/root/tinyos/tinyos-main/tos/interfaces/Leds.nc"
+inline static void sbC__Leds__led1On(void ){
+#line 72
+  LedsP__Leds__led1On();
+#line 72
+}
+#line 72
+# 57 "/root/tinyos/tinyos-main/tos/chips/msp430/pins/HplMsp430GeneralIOP.nc"
+static inline void /*HplMsp430GeneralIOC.P54*/HplMsp430GeneralIOP__36__IO__clr(void )
+#line 57
+{
+#line 57
+  { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
+#line 57
+    * (volatile uint8_t * )49U &= ~(0x01 << 4);
+#line 57
+    __nesc_atomic_end(__nesc_atomic); }
+}
+
+# 53 "/root/tinyos/tinyos-main/tos/chips/msp430/pins/HplMsp430GeneralIO.nc"
+inline static void /*PlatformLedsC.Led0Impl*/Msp430GpioC__0__HplGeneralIO__clr(void ){
+#line 53
+  /*HplMsp430GeneralIOC.P54*/HplMsp430GeneralIOP__36__IO__clr();
+#line 53
+}
+#line 53
+# 49 "/root/tinyos/tinyos-main/tos/chips/msp430/pins/Msp430GpioC.nc"
+static inline void /*PlatformLedsC.Led0Impl*/Msp430GpioC__0__GeneralIO__clr(void )
+#line 49
+{
+#line 49
+  /*PlatformLedsC.Led0Impl*/Msp430GpioC__0__HplGeneralIO__clr();
+}
+
+# 41 "/root/tinyos/tinyos-main/tos/interfaces/GeneralIO.nc"
+inline static void LedsP__Led0__clr(void ){
+#line 41
+  /*PlatformLedsC.Led0Impl*/Msp430GpioC__0__GeneralIO__clr();
+#line 41
+}
+#line 41
+# 74 "/root/tinyos/tinyos-main/tos/system/LedsP.nc"
+static inline void LedsP__Leds__led0On(void )
+#line 74
+{
+  LedsP__Led0__clr();
+  ;
+#line 76
+  ;
+}
+
+# 56 "/root/tinyos/tinyos-main/tos/interfaces/Leds.nc"
+inline static void sbC__Leds__led0On(void ){
+#line 56
+  LedsP__Leds__led0On();
+#line 56
+}
+#line 56
+# 64 "/root/tinyos/tinyos-main/tos/lib/timer/Timer.nc"
+inline static void sbC__Timer_attacked__startPeriodic(uint32_t dt){
 #line 64
+  /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__startPeriodic(8U, dt);
+#line 64
+}
+#line 64
+# 257 "sbC.nc"
+static inline void sbC__m_attacked(int8_t x)
+{
+  pPPackage spkg;
+
+#line 260
+  sbC__Timer_attacked__startPeriodic(200);
+  sbC__life = sbC__life - x;
+  if (sbC__life < 0) 
+    {
+      spkg = (pPPackage )sbC__Packet__getPayload(&sbC__pkt, sizeof(PPackage ));
+      __nesc_hton_uint8(spkg->action.nxdata, 0x03);
+      sbC__AMSend__send(AM_BROADCAST_ADDR, &sbC__pkt, sizeof(PPackage ));
+      sbC__Timer_fight__stop();
+      sbC__Leds__led0On();
+      sbC__Leds__led1On();
+      sbC__Leds__led2On();
+    }
+  return;
+}
+
+# 64 "/root/tinyos/tinyos-main/tos/lib/timer/Timer.nc"
 inline static void sbC__Timer_startgame__startPeriodic(uint32_t dt){
 #line 64
   /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__startPeriodic(4U, dt);
@@ -14461,13 +14711,13 @@ static inline message_t *CC2420ActiveMessageP__Receive__default__receive(am_id_t
 }
 
 # 78 "/root/tinyos/tinyos-main/tos/interfaces/Receive.nc"
-inline static message_t * CC2420ActiveMessageP__Receive__receive(am_id_t arg_0x7f0a80f57908, message_t * msg, void * payload, uint8_t len){
+inline static message_t * CC2420ActiveMessageP__Receive__receive(am_id_t arg_0x7f44c31a3908, message_t * msg, void * payload, uint8_t len){
 #line 78
   nx_struct message_t *__nesc_result;
 #line 78
 
 #line 78
-  switch (arg_0x7f0a80f57908) {
+  switch (arg_0x7f44c31a3908) {
 #line 78
     case 6:
 #line 78
@@ -14477,7 +14727,7 @@ inline static message_t * CC2420ActiveMessageP__Receive__receive(am_id_t arg_0x7
 #line 78
     default:
 #line 78
-      __nesc_result = CC2420ActiveMessageP__Receive__default__receive(arg_0x7f0a80f57908, msg, payload, len);
+      __nesc_result = CC2420ActiveMessageP__Receive__default__receive(arg_0x7f44c31a3908, msg, payload, len);
 #line 78
       break;
 #line 78
@@ -15072,9 +15322,9 @@ static inline void /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__Resource__defaul
 }
 
 # 102 "/root/tinyos/tinyos-main/tos/interfaces/Resource.nc"
-inline static void /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__Resource__granted(uint8_t arg_0x7f0a817672f0){
+inline static void /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__Resource__granted(uint8_t arg_0x7f44c39b32f0){
 #line 102
-  switch (arg_0x7f0a817672f0) {
+  switch (arg_0x7f44c39b32f0) {
 #line 102
     case /*CC2420SpiWireC.HplCC2420SpiC.SpiC*/Msp430Spi0C__0__CLIENT_ID:
 #line 102
@@ -15084,7 +15334,7 @@ inline static void /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__Resource__grante
 #line 102
     default:
 #line 102
-      /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__Resource__default__granted(arg_0x7f0a817672f0);
+      /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__Resource__default__granted(arg_0x7f44c39b32f0);
 #line 102
       break;
 #line 102
@@ -15106,9 +15356,9 @@ static inline void /*Msp430UsartShare0P.ArbiterC.Arbiter*/ArbiterP__0__Resource_
 }
 
 # 102 "/root/tinyos/tinyos-main/tos/interfaces/Resource.nc"
-inline static void /*Msp430UsartShare0P.ArbiterC.Arbiter*/ArbiterP__0__Resource__granted(uint8_t arg_0x7f0a815c8640){
+inline static void /*Msp430UsartShare0P.ArbiterC.Arbiter*/ArbiterP__0__Resource__granted(uint8_t arg_0x7f44c3813640){
 #line 102
-  switch (arg_0x7f0a815c8640) {
+  switch (arg_0x7f44c3813640) {
 #line 102
     case /*CC2420SpiWireC.HplCC2420SpiC.SpiC.UsartC*/Msp430Usart0C__0__CLIENT_ID:
 #line 102
@@ -15118,7 +15368,7 @@ inline static void /*Msp430UsartShare0P.ArbiterC.Arbiter*/ArbiterP__0__Resource_
 #line 102
     default:
 #line 102
-      /*Msp430UsartShare0P.ArbiterC.Arbiter*/ArbiterP__0__Resource__default__granted(arg_0x7f0a815c8640);
+      /*Msp430UsartShare0P.ArbiterC.Arbiter*/ArbiterP__0__Resource__default__granted(arg_0x7f44c3813640);
 #line 102
       break;
 #line 102
@@ -15149,9 +15399,9 @@ static inline void /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__SpiPacket__defau
 }
 
 # 82 "/root/tinyos/tinyos-main/tos/interfaces/SpiPacket.nc"
-inline static void /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__SpiPacket__sendDone(uint8_t arg_0x7f0a817642f0, uint8_t * txBuf, uint8_t * rxBuf, uint16_t len, error_t error){
+inline static void /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__SpiPacket__sendDone(uint8_t arg_0x7f44c39b02f0, uint8_t * txBuf, uint8_t * rxBuf, uint16_t len, error_t error){
 #line 82
-  switch (arg_0x7f0a817642f0) {
+  switch (arg_0x7f44c39b02f0) {
 #line 82
     case /*CC2420SpiWireC.HplCC2420SpiC.SpiC*/Msp430Spi0C__0__CLIENT_ID:
 #line 82
@@ -15161,7 +15411,7 @@ inline static void /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__SpiPacket__sendD
 #line 82
     default:
 #line 82
-      /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__SpiPacket__default__sendDone(arg_0x7f0a817642f0, txBuf, rxBuf, len, error);
+      /*Msp430SpiNoDma0P.SpiP*/Msp430SpiNoDmaP__0__SpiPacket__default__sendDone(arg_0x7f44c39b02f0, txBuf, rxBuf, len, error);
 #line 82
       break;
 #line 82
@@ -15695,9 +15945,9 @@ static inline void CC2420SpiP__Fifo__default__readDone(uint8_t addr, uint8_t *rx
 }
 
 # 71 "/root/tinyos/tinyos-main/tos/chips/cc2420/interfaces/CC2420Fifo.nc"
-inline static void CC2420SpiP__Fifo__readDone(uint8_t arg_0x7f0a81863ca8, uint8_t * data, uint8_t length, error_t error){
+inline static void CC2420SpiP__Fifo__readDone(uint8_t arg_0x7f44c3aafca8, uint8_t * data, uint8_t length, error_t error){
 #line 71
-  switch (arg_0x7f0a81863ca8) {
+  switch (arg_0x7f44c3aafca8) {
 #line 71
     case CC2420_TXFIFO:
 #line 71
@@ -15713,7 +15963,7 @@ inline static void CC2420SpiP__Fifo__readDone(uint8_t arg_0x7f0a81863ca8, uint8_
 #line 71
     default:
 #line 71
-      CC2420SpiP__Fifo__default__readDone(arg_0x7f0a81863ca8, data, length, error);
+      CC2420SpiP__Fifo__default__readDone(arg_0x7f44c3aafca8, data, length, error);
 #line 71
       break;
 #line 71
@@ -15744,9 +15994,9 @@ message_t *msg)
 }
 
 # 81 "/root/tinyos/tinyos-main/tos/chips/cc2420/interfaces/RadioBackoff.nc"
-inline static void CC2420ActiveMessageP__RadioBackoff__requestInitialBackoff(am_id_t arg_0x7f0a80f52d60, message_t * msg){
+inline static void CC2420ActiveMessageP__RadioBackoff__requestInitialBackoff(am_id_t arg_0x7f44c319ed60, message_t * msg){
 #line 81
-    CC2420ActiveMessageP__RadioBackoff__default__requestInitialBackoff(arg_0x7f0a80f52d60, msg);
+    CC2420ActiveMessageP__RadioBackoff__default__requestInitialBackoff(arg_0x7f44c319ed60, msg);
 #line 81
 }
 #line 81
@@ -15885,9 +16135,9 @@ static inline void CC2420SpiP__Fifo__default__writeDone(uint8_t addr, uint8_t *t
 }
 
 # 91 "/root/tinyos/tinyos-main/tos/chips/cc2420/interfaces/CC2420Fifo.nc"
-inline static void CC2420SpiP__Fifo__writeDone(uint8_t arg_0x7f0a81863ca8, uint8_t * data, uint8_t length, error_t error){
+inline static void CC2420SpiP__Fifo__writeDone(uint8_t arg_0x7f44c3aafca8, uint8_t * data, uint8_t length, error_t error){
 #line 91
-  switch (arg_0x7f0a81863ca8) {
+  switch (arg_0x7f44c3aafca8) {
 #line 91
     case CC2420_TXFIFO:
 #line 91
@@ -15903,7 +16153,7 @@ inline static void CC2420SpiP__Fifo__writeDone(uint8_t arg_0x7f0a81863ca8, uint8
 #line 91
     default:
 #line 91
-      CC2420SpiP__Fifo__default__writeDone(arg_0x7f0a81863ca8, data, length, error);
+      CC2420SpiP__Fifo__default__writeDone(arg_0x7f44c3aafca8, data, length, error);
 #line 91
       break;
 #line 91
@@ -16454,9 +16704,9 @@ static inline void CC2420SpiP__Resource__default__granted(uint8_t id)
 }
 
 # 102 "/root/tinyos/tinyos-main/tos/interfaces/Resource.nc"
-inline static void CC2420SpiP__Resource__granted(uint8_t arg_0x7f0a81864a68){
+inline static void CC2420SpiP__Resource__granted(uint8_t arg_0x7f44c3ab0a68){
 #line 102
-  switch (arg_0x7f0a81864a68) {
+  switch (arg_0x7f44c3ab0a68) {
 #line 102
     case /*CC2420ControlC.Spi*/CC2420SpiC__0__CLIENT_ID:
 #line 102
@@ -16490,7 +16740,7 @@ inline static void CC2420SpiP__Resource__granted(uint8_t arg_0x7f0a81864a68){
 #line 102
     default:
 #line 102
-      CC2420SpiP__Resource__default__granted(arg_0x7f0a81864a68);
+      CC2420SpiP__Resource__default__granted(arg_0x7f44c3ab0a68);
 #line 102
       break;
 #line 102
@@ -16665,9 +16915,9 @@ inline static void CC2420TinyosNetworkP__BareSend__sendDone(message_t * msg, err
 }
 #line 100
 # 110 "/root/tinyos/tinyos-main/tos/interfaces/AMSend.nc"
-inline static void CC2420ActiveMessageP__AMSend__sendDone(am_id_t arg_0x7f0a80f587d8, message_t * msg, error_t error){
+inline static void CC2420ActiveMessageP__AMSend__sendDone(am_id_t arg_0x7f44c31a47d8, message_t * msg, error_t error){
 #line 110
-  /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__AMSend__sendDone(arg_0x7f0a80f587d8, msg, error);
+  /*AMQueueP.AMQueueImplP*/AMQueueImplP__0__AMSend__sendDone(arg_0x7f44c31a47d8, msg, error);
 #line 110
 }
 #line 110
@@ -19120,9 +19370,9 @@ static inline void /*Msp430UsartShare0P.UsartShareP*/Msp430UsartShareP__0__Inter
 }
 
 # 54 "/root/tinyos/tinyos-main/tos/chips/msp430/usart/HplMsp430UsartInterrupts.nc"
-inline static void /*Msp430UsartShare0P.UsartShareP*/Msp430UsartShareP__0__Interrupts__rxDone(uint8_t arg_0x7f0a81605800, uint8_t data){
+inline static void /*Msp430UsartShare0P.UsartShareP*/Msp430UsartShareP__0__Interrupts__rxDone(uint8_t arg_0x7f44c3851800, uint8_t data){
 #line 54
-  switch (arg_0x7f0a81605800) {
+  switch (arg_0x7f44c3851800) {
 #line 54
     case /*CC2420SpiWireC.HplCC2420SpiC.SpiC.UsartC*/Msp430Usart0C__0__CLIENT_ID:
 #line 54
@@ -19132,7 +19382,7 @@ inline static void /*Msp430UsartShare0P.UsartShareP*/Msp430UsartShareP__0__Inter
 #line 54
     default:
 #line 54
-      /*Msp430UsartShare0P.UsartShareP*/Msp430UsartShareP__0__Interrupts__default__rxDone(arg_0x7f0a81605800, data);
+      /*Msp430UsartShare0P.UsartShareP*/Msp430UsartShareP__0__Interrupts__default__rxDone(arg_0x7f44c3851800, data);
 #line 54
       break;
 #line 54
@@ -19209,9 +19459,9 @@ static inline void /*Msp430UsartShare0P.UsartShareP*/Msp430UsartShareP__0__I2CIn
 }
 
 # 39 "/root/tinyos/tinyos-main/tos/chips/msp430/usart/HplMsp430I2CInterrupts.nc"
-inline static void /*Msp430UsartShare0P.UsartShareP*/Msp430UsartShareP__0__I2CInterrupts__fired(uint8_t arg_0x7f0a81604620){
+inline static void /*Msp430UsartShare0P.UsartShareP*/Msp430UsartShareP__0__I2CInterrupts__fired(uint8_t arg_0x7f44c3850620){
 #line 39
-    /*Msp430UsartShare0P.UsartShareP*/Msp430UsartShareP__0__I2CInterrupts__default__fired(arg_0x7f0a81604620);
+    /*Msp430UsartShare0P.UsartShareP*/Msp430UsartShareP__0__I2CInterrupts__default__fired(arg_0x7f44c3850620);
 #line 39
 }
 #line 39
@@ -19244,9 +19494,9 @@ static inline void /*Msp430UsartShare0P.UsartShareP*/Msp430UsartShareP__0__Inter
 }
 
 # 49 "/root/tinyos/tinyos-main/tos/chips/msp430/usart/HplMsp430UsartInterrupts.nc"
-inline static void /*Msp430UsartShare0P.UsartShareP*/Msp430UsartShareP__0__Interrupts__txDone(uint8_t arg_0x7f0a81605800){
+inline static void /*Msp430UsartShare0P.UsartShareP*/Msp430UsartShareP__0__Interrupts__txDone(uint8_t arg_0x7f44c3851800){
 #line 49
-  switch (arg_0x7f0a81605800) {
+  switch (arg_0x7f44c3851800) {
 #line 49
     case /*CC2420SpiWireC.HplCC2420SpiC.SpiC.UsartC*/Msp430Usart0C__0__CLIENT_ID:
 #line 49
@@ -19256,7 +19506,7 @@ inline static void /*Msp430UsartShare0P.UsartShareP*/Msp430UsartShareP__0__Inter
 #line 49
     default:
 #line 49
-      /*Msp430UsartShare0P.UsartShareP*/Msp430UsartShareP__0__Interrupts__default__txDone(arg_0x7f0a81605800);
+      /*Msp430UsartShare0P.UsartShareP*/Msp430UsartShareP__0__Interrupts__default__txDone(arg_0x7f44c3851800);
 #line 49
       break;
 #line 49
@@ -19365,9 +19615,9 @@ static void /*Msp430TimerC.Msp430TimerB*/Msp430TimerP__1__Event__default__fired(
 }
 
 # 39 "/root/tinyos/tinyos-main/tos/chips/msp430/timer/Msp430TimerEvent.nc"
-static void /*Msp430TimerC.Msp430TimerB*/Msp430TimerP__1__Event__fired(uint8_t arg_0x7f0a82115dd0){
+static void /*Msp430TimerC.Msp430TimerB*/Msp430TimerP__1__Event__fired(uint8_t arg_0x7f44c4361dd0){
 #line 39
-  switch (arg_0x7f0a82115dd0) {
+  switch (arg_0x7f44c4361dd0) {
 #line 39
     case 0:
 #line 39
@@ -19419,7 +19669,7 @@ static void /*Msp430TimerC.Msp430TimerB*/Msp430TimerP__1__Event__fired(uint8_t a
 #line 39
     default:
 #line 39
-      /*Msp430TimerC.Msp430TimerB*/Msp430TimerP__1__Event__default__fired(arg_0x7f0a82115dd0);
+      /*Msp430TimerC.Msp430TimerB*/Msp430TimerP__1__Event__default__fired(arg_0x7f44c4361dd0);
 #line 39
       break;
 #line 39
@@ -20403,9 +20653,9 @@ static void SchedulerBasicP__TaskBasic__default__runTask(uint8_t id)
 }
 
 # 75 "/root/tinyos/tinyos-main/tos/interfaces/TaskBasic.nc"
-static void SchedulerBasicP__TaskBasic__runTask(uint8_t arg_0x7f0a82200650){
+static void SchedulerBasicP__TaskBasic__runTask(uint8_t arg_0x7f44c444c650){
 #line 75
-  switch (arg_0x7f0a82200650) {
+  switch (arg_0x7f44c444c650) {
 #line 75
     case CC2420CsmaP__startDone_task:
 #line 75
@@ -20493,7 +20743,7 @@ static void SchedulerBasicP__TaskBasic__runTask(uint8_t arg_0x7f0a82200650){
 #line 75
     default:
 #line 75
-      SchedulerBasicP__TaskBasic__default__runTask(arg_0x7f0a82200650);
+      SchedulerBasicP__TaskBasic__default__runTask(arg_0x7f44c444c650);
 #line 75
       break;
 #line 75
