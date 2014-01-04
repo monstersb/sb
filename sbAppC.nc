@@ -22,6 +22,8 @@ implementation {
 	sbC.Boot -> MainC;
 	sbC.Leds -> LedsC;
 	sbC.AMControl -> ActiveMessageC;
+	sbC.Packet -> AMSenderC;
+	sbC.AMPacket -> AMSenderC;
 	sbC.AMSend -> AMSenderC;
 	sbC.Receive -> AMReceiverC;
 	sbC.Timer_init -> Timer_init;
