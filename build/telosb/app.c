@@ -187,9 +187,9 @@ typedef int32_t ufs_daddr_t;
 typedef int32_t ufs_time_t;
 typedef u_int32_t uid_t;
 # 44 "/usr/lib64/gcc/msp430/4.6.3/../../../../msp430/include/string.h" 3
-extern void *memset(void *arg_0x7fa8a2c94980, int arg_0x7fa8a2c94be8, size_t arg_0x7fa8a2c93020);
+extern void *memset(void *arg_0x7fee131c0980, int arg_0x7fee131c0be8, size_t arg_0x7fee131bf020);
 #line 65
-extern void *memset(void *arg_0x7fa8a2c7db10, int arg_0x7fa8a2c7dd78, size_t arg_0x7fa8a2c7c060);
+extern void *memset(void *arg_0x7fee131a9b10, int arg_0x7fee131a9d78, size_t arg_0x7fee131a8060);
 # 62 "/usr/lib64/gcc/msp430/4.6.3/../../../../msp430/include/stdlib.h" 3
 #line 59
 typedef struct __nesc_unnamed4242 {
@@ -344,7 +344,7 @@ struct _reent {
 
   int __sdidinit;
 
-  void (*__cleanup)(struct _reent *arg_0x7fa8a2c41290);
+  void (*__cleanup)(struct _reent *arg_0x7fee1316d290);
 
 
   struct _Bigint *_result;
@@ -384,7 +384,7 @@ struct _reent {
   struct _atexit _atexit0;
 
 
-  void (**_sig_func)(int arg_0x7fa8a2c3c300);
+  void (**_sig_func)(int arg_0x7fee13168300);
 
 
 
@@ -789,7 +789,9 @@ enum __nesc_unnamed4261 {
   LEDS_LED6 = 1 << 6, 
   LEDS_LED7 = 1 << 7
 };
+typedef TMilli sbC__Timer_dead__precision_tag;
 typedef TMilli sbC__Timer_init__precision_tag;
+typedef TMilli sbC__Timer_scan__precision_tag;
 enum /*HilTimerMilliC.AlarmMilli32C.AlarmFrom.Msp430Timer*/Msp430Timer32khzC__0____nesc_unnamed4262 {
   Msp430Timer32khzC__0__ALARM_ID = 0U
 };
@@ -867,7 +869,7 @@ static void /*Msp430TimerC.Msp430TimerA*/Msp430TimerP__0__VectorTimerX1__fired(v
 #line 39
 static void /*Msp430TimerC.Msp430TimerA*/Msp430TimerP__0__Event__default__fired(
 # 51 "/root/tinyos/tinyos-main/tos/chips/msp430/timer/Msp430TimerP.nc"
-uint8_t arg_0x7fa8a2689dd0);
+uint8_t arg_0x7fee12bb5dd0);
 # 39 "/root/tinyos/tinyos-main/tos/chips/msp430/timer/Msp430TimerEvent.nc"
 static void /*Msp430TimerC.Msp430TimerB*/Msp430TimerP__1__VectorTimerX0__fired(void );
 #line 39
@@ -877,7 +879,7 @@ static void /*Msp430TimerC.Msp430TimerB*/Msp430TimerP__1__VectorTimerX1__fired(v
 #line 39
 static void /*Msp430TimerC.Msp430TimerB*/Msp430TimerP__1__Event__default__fired(
 # 51 "/root/tinyos/tinyos-main/tos/chips/msp430/timer/Msp430TimerP.nc"
-uint8_t arg_0x7fa8a2689dd0);
+uint8_t arg_0x7fee12bb5dd0);
 # 45 "/root/tinyos/tinyos-main/tos/chips/msp430/timer/Msp430Timer.nc"
 static uint16_t /*Msp430TimerC.Msp430TimerB*/Msp430TimerP__1__Timer__get(void );
 static bool /*Msp430TimerC.Msp430TimerB*/Msp430TimerP__1__Timer__isOverflowPending(void );
@@ -1025,11 +1027,11 @@ static void McuSleepC__McuSleep__sleep(void );
 # 67 "/root/tinyos/tinyos-main/tos/interfaces/TaskBasic.nc"
 static error_t SchedulerBasicP__TaskBasic__postTask(
 # 56 "/root/tinyos/tinyos-main/tos/system/SchedulerBasicP.nc"
-uint8_t arg_0x7fa8a2774650);
+uint8_t arg_0x7fee12ca0650);
 # 75 "/root/tinyos/tinyos-main/tos/interfaces/TaskBasic.nc"
 static void SchedulerBasicP__TaskBasic__default__runTask(
 # 56 "/root/tinyos/tinyos-main/tos/system/SchedulerBasicP.nc"
-uint8_t arg_0x7fa8a2774650);
+uint8_t arg_0x7fee12ca0650);
 # 57 "/root/tinyos/tinyos-main/tos/interfaces/Scheduler.nc"
 static void SchedulerBasicP__Scheduler__init(void );
 #line 72
@@ -1103,9 +1105,13 @@ static void /*PlatformLedsC.Led2Impl*/Msp430GpioC__2__GeneralIO__makeOutput(void
 #line 40
 static void /*PlatformLedsC.Led2Impl*/Msp430GpioC__2__GeneralIO__set(void );
 # 83 "/root/tinyos/tinyos-main/tos/lib/timer/Timer.nc"
+static void sbC__Timer_dead__fired(void );
+#line 83
 static void sbC__Timer_init__fired(void );
 # 60 "/root/tinyos/tinyos-main/tos/interfaces/Boot.nc"
 static void sbC__Boot__booted(void );
+# 83 "/root/tinyos/tinyos-main/tos/lib/timer/Timer.nc"
+static void sbC__Timer_scan__fired(void );
 # 45 "/root/tinyos/tinyos-main/tos/chips/msp430/timer/Msp430Compare.nc"
 static void /*HilTimerMilliC.AlarmMilli32C.AlarmFrom.Msp430Alarm*/Msp430AlarmC__0__Msp430Compare__fired(void );
 # 48 "/root/tinyos/tinyos-main/tos/chips/msp430/timer/Msp430Timer.nc"
@@ -1172,17 +1178,17 @@ static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__TimerFrom__f
 #line 83
 static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__default__fired(
 # 48 "/root/tinyos/tinyos-main/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x7fa8a21be5d8);
+uint8_t arg_0x7fee126d65d8);
 # 64 "/root/tinyos/tinyos-main/tos/lib/timer/Timer.nc"
 static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__startPeriodic(
 # 48 "/root/tinyos/tinyos-main/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x7fa8a21be5d8, 
+uint8_t arg_0x7fee126d65d8, 
 # 64 "/root/tinyos/tinyos-main/tos/lib/timer/Timer.nc"
 uint32_t dt);
 #line 78
 static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__stop(
 # 48 "/root/tinyos/tinyos-main/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x7fa8a21be5d8);
+uint8_t arg_0x7fee126d65d8);
 # 82 "/root/tinyos/tinyos-main/tos/lib/timer/Counter.nc"
 static void /*HilTimerMilliC.CounterToLocalTimeC*/CounterToLocalTimeC__0__Counter__overflow(void );
 # 62 "/root/tinyos/tinyos-main/tos/interfaces/Init.nc"
@@ -1289,7 +1295,7 @@ static inline error_t Msp430ClockP__Init__init(void );
 # 39 "/root/tinyos/tinyos-main/tos/chips/msp430/timer/Msp430TimerEvent.nc"
 static void /*Msp430TimerC.Msp430TimerA*/Msp430TimerP__0__Event__fired(
 # 51 "/root/tinyos/tinyos-main/tos/chips/msp430/timer/Msp430TimerP.nc"
-uint8_t arg_0x7fa8a2689dd0);
+uint8_t arg_0x7fee12bb5dd0);
 # 48 "/root/tinyos/tinyos-main/tos/chips/msp430/timer/Msp430Timer.nc"
 static void /*Msp430TimerC.Msp430TimerA*/Msp430TimerP__0__Timer__overflow(void );
 # 126 "/root/tinyos/tinyos-main/tos/chips/msp430/timer/Msp430TimerP.nc"
@@ -1317,7 +1323,7 @@ static inline void /*Msp430TimerC.Msp430TimerA*/Msp430TimerP__0__Event__default_
 # 39 "/root/tinyos/tinyos-main/tos/chips/msp430/timer/Msp430TimerEvent.nc"
 static void /*Msp430TimerC.Msp430TimerB*/Msp430TimerP__1__Event__fired(
 # 51 "/root/tinyos/tinyos-main/tos/chips/msp430/timer/Msp430TimerP.nc"
-uint8_t arg_0x7fa8a2689dd0);
+uint8_t arg_0x7fee12bb5dd0);
 # 48 "/root/tinyos/tinyos-main/tos/chips/msp430/timer/Msp430Timer.nc"
 static void /*Msp430TimerC.Msp430TimerB*/Msp430TimerP__1__Timer__overflow(void );
 # 62 "/root/tinyos/tinyos-main/tos/chips/msp430/timer/Msp430TimerP.nc"
@@ -1758,7 +1764,7 @@ int main(void )   ;
 # 75 "/root/tinyos/tinyos-main/tos/interfaces/TaskBasic.nc"
 static void SchedulerBasicP__TaskBasic__runTask(
 # 56 "/root/tinyos/tinyos-main/tos/system/SchedulerBasicP.nc"
-uint8_t arg_0x7fa8a2774650);
+uint8_t arg_0x7fee12ca0650);
 # 76 "/root/tinyos/tinyos-main/tos/interfaces/McuSleep.nc"
 static void SchedulerBasicP__McuSleep__sleep(void );
 # 61 "/root/tinyos/tinyos-main/tos/system/SchedulerBasicP.nc"
@@ -1843,7 +1849,7 @@ static inline void LedsP__Leds__led2Toggle(void );
 # 56 "/root/tinyos/tinyos-main/tos/chips/msp430/pins/HplMsp430GeneralIOP.nc"
 static inline void /*HplMsp430GeneralIOC.P54*/HplMsp430GeneralIOP__36__IO__set(void );
 
-static inline void /*HplMsp430GeneralIOC.P54*/HplMsp430GeneralIOP__36__IO__toggle(void );
+static void /*HplMsp430GeneralIOC.P54*/HplMsp430GeneralIOP__36__IO__toggle(void );
 
 
 
@@ -1852,7 +1858,7 @@ static inline void /*HplMsp430GeneralIOC.P54*/HplMsp430GeneralIOP__36__IO__makeO
 #line 56
 static inline void /*HplMsp430GeneralIOC.P55*/HplMsp430GeneralIOP__37__IO__set(void );
 
-static inline void /*HplMsp430GeneralIOC.P55*/HplMsp430GeneralIOP__37__IO__toggle(void );
+static void /*HplMsp430GeneralIOC.P55*/HplMsp430GeneralIOP__37__IO__toggle(void );
 
 
 
@@ -1861,7 +1867,7 @@ static inline void /*HplMsp430GeneralIOC.P55*/HplMsp430GeneralIOP__37__IO__makeO
 #line 56
 static inline void /*HplMsp430GeneralIOC.P56*/HplMsp430GeneralIOP__38__IO__set(void );
 
-static inline void /*HplMsp430GeneralIOC.P56*/HplMsp430GeneralIOP__38__IO__toggle(void );
+static void /*HplMsp430GeneralIOC.P56*/HplMsp430GeneralIOP__38__IO__toggle(void );
 
 
 
@@ -1919,22 +1925,38 @@ static void sbC__Leds__led0Toggle(void );
 static void sbC__Leds__led1Toggle(void );
 #line 100
 static void sbC__Leds__led2Toggle(void );
-# 10 "sbC.nc"
+# 64 "/root/tinyos/tinyos-main/tos/lib/timer/Timer.nc"
+static void sbC__Timer_scan__startPeriodic(uint32_t dt);
+# 12 "sbC.nc"
 int8_t sbC__inited;
-static inline void sbC__m_init(void );
+int8_t sbC__fscan;
+static void sbC__m_init(void );
+static inline void sbC__m_scan(void );
 
 static inline void sbC__Boot__booted(void );
 
 
 
 
-static inline void sbC__m_init(void );
+static void sbC__m_init(void );
+
+
+
+
+
+
+static inline void sbC__m_scan(void );
+
 
 
 
 
 
 static inline void sbC__Timer_init__fired(void );
+#line 53
+static inline void sbC__Timer_scan__fired(void );
+#line 77
+static inline void sbC__Timer_dead__fired(void );
 # 41 "/root/tinyos/tinyos-main/tos/chips/msp430/timer/Msp430Compare.nc"
 static void /*HilTimerMilliC.AlarmMilli32C.AlarmFrom.Msp430Alarm*/Msp430AlarmC__0__Msp430Compare__setEvent(uint16_t time);
 
@@ -2142,7 +2164,7 @@ static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__TimerFrom__s
 
 static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__fired(
 # 48 "/root/tinyos/tinyos-main/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x7fa8a21be5d8);
+uint8_t arg_0x7fee126d65d8);
 #line 71
 enum /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0____nesc_unnamed4268 {
 #line 71
@@ -2153,7 +2175,7 @@ typedef int /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0____nesc_silly
 #line 53
 enum /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0____nesc_unnamed4269 {
 
-  VirtualizeTimerC__0__NUM_TIMERS = 1U, 
+  VirtualizeTimerC__0__NUM_TIMERS = 3U, 
   VirtualizeTimerC__0__END_OF_LIST = 255
 };
 
@@ -2260,9 +2282,9 @@ static inline void /*Msp430TimerC.Msp430TimerA*/Msp430TimerP__0__Event__default_
 }
 
 # 39 "/root/tinyos/tinyos-main/tos/chips/msp430/timer/Msp430TimerEvent.nc"
-inline static void /*Msp430TimerC.Msp430TimerA*/Msp430TimerP__0__Event__fired(uint8_t arg_0x7fa8a2689dd0){
+inline static void /*Msp430TimerC.Msp430TimerA*/Msp430TimerP__0__Event__fired(uint8_t arg_0x7fee12bb5dd0){
 #line 39
-  switch (arg_0x7fa8a2689dd0) {
+  switch (arg_0x7fee12bb5dd0) {
 #line 39
     case 0:
 #line 39
@@ -2290,7 +2312,7 @@ inline static void /*Msp430TimerC.Msp430TimerA*/Msp430TimerP__0__Event__fired(ui
 #line 39
     default:
 #line 39
-      /*Msp430TimerC.Msp430TimerA*/Msp430TimerP__0__Event__default__fired(arg_0x7fa8a2689dd0);
+      /*Msp430TimerC.Msp430TimerA*/Msp430TimerP__0__Event__default__fired(arg_0x7fee12bb5dd0);
 #line 39
       break;
 #line 39
@@ -4170,18 +4192,6 @@ inline static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer
 #line 78
 }
 #line 78
-# 58 "/root/tinyos/tinyos-main/tos/chips/msp430/pins/HplMsp430GeneralIOP.nc"
-static inline void /*HplMsp430GeneralIOC.P56*/HplMsp430GeneralIOP__38__IO__toggle(void )
-#line 58
-{
-#line 58
-  { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
-#line 58
-    * (volatile uint8_t * )49U ^= 0x01 << 6;
-#line 58
-    __nesc_atomic_end(__nesc_atomic); }
-}
-
 # 58 "/root/tinyos/tinyos-main/tos/chips/msp430/pins/HplMsp430GeneralIO.nc"
 inline static void /*PlatformLedsC.Led2Impl*/Msp430GpioC__2__HplGeneralIO__toggle(void ){
 #line 58
@@ -4221,18 +4231,6 @@ inline static void sbC__Leds__led2Toggle(void ){
 #line 100
 }
 #line 100
-# 58 "/root/tinyos/tinyos-main/tos/chips/msp430/pins/HplMsp430GeneralIOP.nc"
-static inline void /*HplMsp430GeneralIOC.P55*/HplMsp430GeneralIOP__37__IO__toggle(void )
-#line 58
-{
-#line 58
-  { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
-#line 58
-    * (volatile uint8_t * )49U ^= 0x01 << 5;
-#line 58
-    __nesc_atomic_end(__nesc_atomic); }
-}
-
 # 58 "/root/tinyos/tinyos-main/tos/chips/msp430/pins/HplMsp430GeneralIO.nc"
 inline static void /*PlatformLedsC.Led1Impl*/Msp430GpioC__1__HplGeneralIO__toggle(void ){
 #line 58
@@ -4272,18 +4270,6 @@ inline static void sbC__Leds__led1Toggle(void ){
 #line 83
 }
 #line 83
-# 58 "/root/tinyos/tinyos-main/tos/chips/msp430/pins/HplMsp430GeneralIOP.nc"
-static inline void /*HplMsp430GeneralIOC.P54*/HplMsp430GeneralIOP__36__IO__toggle(void )
-#line 58
-{
-#line 58
-  { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
-#line 58
-    * (volatile uint8_t * )49U ^= 0x01 << 4;
-#line 58
-    __nesc_atomic_end(__nesc_atomic); }
-}
-
 # 58 "/root/tinyos/tinyos-main/tos/chips/msp430/pins/HplMsp430GeneralIO.nc"
 inline static void /*PlatformLedsC.Led0Impl*/Msp430GpioC__0__HplGeneralIO__toggle(void ){
 #line 58
@@ -4323,6 +4309,13 @@ inline static void sbC__Leds__led0Toggle(void ){
 #line 67
 }
 #line 67
+# 64 "/root/tinyos/tinyos-main/tos/lib/timer/Timer.nc"
+inline static void sbC__Timer_scan__startPeriodic(uint32_t dt){
+#line 64
+  /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__startPeriodic(1U, dt);
+#line 64
+}
+#line 64
 # 164 "/root/tinyos/tinyos-main/tos/lib/timer/VirtualizeTimerC.nc"
 static inline void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__stop(uint8_t num)
 {
@@ -4336,17 +4329,71 @@ inline static void sbC__Timer_init__stop(void ){
 #line 78
 }
 #line 78
-# 24 "sbC.nc"
+# 29 "sbC.nc"
+static inline void sbC__m_scan(void )
+{
+  sbC__Timer_init__stop();
+
+  sbC__Timer_scan__startPeriodic(100);
+}
+
 static inline void sbC__Timer_init__fired(void )
 {
+  sbC__inited = sbC__inited + 1;
   if (sbC__inited == 5) 
     {
-      sbC__Timer_init__stop();
+      return;
     }
+  else {
+#line 43
+    if (sbC__inited == 6) 
+      {
+        sbC__m_scan();
+        return;
+      }
+    }
+#line 48
   sbC__Leds__led0Toggle();
   sbC__Leds__led1Toggle();
   sbC__Leds__led2Toggle();
-  sbC__inited = sbC__inited + 1;
+}
+
+static inline void sbC__Timer_scan__fired(void )
+{
+  sbC__fscan = sbC__fscan % 7;
+  if (sbC__fscan == 0) 
+    {
+      sbC__Leds__led0Toggle();
+    }
+  else {
+#line 60
+    if (sbC__fscan == 1) 
+      {
+        sbC__Leds__led1Toggle();
+        sbC__Leds__led0Toggle();
+      }
+    else {
+#line 65
+      if (sbC__fscan == 2) 
+        {
+          sbC__Leds__led2Toggle();
+          sbC__Leds__led1Toggle();
+        }
+      else {
+#line 70
+        if (sbC__fscan == 3) 
+          {
+            sbC__Leds__led2Toggle();
+          }
+        }
+      }
+    }
+#line 74
+  sbC__fscan = sbC__fscan + 1;
+}
+
+static inline void sbC__Timer_dead__fired(void )
+{
 }
 
 # 204 "/root/tinyos/tinyos-main/tos/lib/timer/VirtualizeTimerC.nc"
@@ -4355,9 +4402,9 @@ static inline void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer
 }
 
 # 83 "/root/tinyos/tinyos-main/tos/lib/timer/Timer.nc"
-inline static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__fired(uint8_t arg_0x7fa8a21be5d8){
+inline static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__fired(uint8_t arg_0x7fee126d65d8){
 #line 83
-  switch (arg_0x7fa8a21be5d8) {
+  switch (arg_0x7fee126d65d8) {
 #line 83
     case 0U:
 #line 83
@@ -4365,9 +4412,21 @@ inline static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer
 #line 83
       break;
 #line 83
+    case 1U:
+#line 83
+      sbC__Timer_scan__fired();
+#line 83
+      break;
+#line 83
+    case 2U:
+#line 83
+      sbC__Timer_dead__fired();
+#line 83
+      break;
+#line 83
     default:
 #line 83
-      /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__default__fired(arg_0x7fa8a21be5d8);
+      /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__default__fired(arg_0x7fee126d65d8);
 #line 83
       break;
 #line 83
@@ -4375,6 +4434,34 @@ inline static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer
 #line 83
 }
 #line 83
+# 67 "/root/tinyos/tinyos-main/tos/interfaces/TaskBasic.nc"
+inline static error_t /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__updateFromTimer__postTask(void ){
+#line 67
+  unsigned char __nesc_result;
+#line 67
+
+#line 67
+  __nesc_result = SchedulerBasicP__TaskBasic__postTask(/*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__updateFromTimer);
+#line 67
+
+#line 67
+  return __nesc_result;
+#line 67
+}
+#line 67
+# 144 "/root/tinyos/tinyos-main/tos/lib/timer/VirtualizeTimerC.nc"
+static inline void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__startTimer(uint8_t num, uint32_t t0, uint32_t dt, bool isoneshot)
+{
+  /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer_t *timer = &/*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__m_timers[num];
+
+#line 147
+  timer->t0 = t0;
+  timer->dt = dt;
+  timer->isoneshot = isoneshot;
+  timer->isrunning = TRUE;
+  /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__updateFromTimer__postTask();
+}
+
 # 103 "/root/tinyos/tinyos-main/tos/lib/timer/Alarm.nc"
 inline static void /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Alarm__startAt(/*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Alarm__size_type t0, /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Alarm__size_type dt){
 #line 103
@@ -4577,21 +4664,7 @@ inline static error_t RealMainP__SoftwareInit__init(void ){
 #line 62
 }
 #line 62
-# 64 "/root/tinyos/tinyos-main/tos/lib/timer/Timer.nc"
-inline static void sbC__Timer_init__startPeriodic(uint32_t dt){
-#line 64
-  /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__startPeriodic(0U, dt);
-#line 64
-}
-#line 64
-# 18 "sbC.nc"
-static inline void sbC__m_init(void )
-{
-  sbC__inited = 0;
-  sbC__Timer_init__startPeriodic(500);
-}
-
-#line 13
+# 17 "sbC.nc"
 static inline void sbC__Boot__booted(void )
 {
   sbC__m_init();
@@ -4606,43 +4679,22 @@ inline static void RealMainP__Boot__booted(void ){
 #line 60
 }
 #line 60
-# 67 "/root/tinyos/tinyos-main/tos/interfaces/TaskBasic.nc"
-inline static error_t /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__updateFromTimer__postTask(void ){
-#line 67
-  unsigned char __nesc_result;
-#line 67
-
-#line 67
-  __nesc_result = SchedulerBasicP__TaskBasic__postTask(/*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__updateFromTimer);
-#line 67
-
-#line 67
-  return __nesc_result;
-#line 67
+# 64 "/root/tinyos/tinyos-main/tos/lib/timer/Timer.nc"
+inline static void sbC__Timer_init__startPeriodic(uint32_t dt){
+#line 64
+  /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__startPeriodic(0U, dt);
+#line 64
 }
-#line 67
-# 144 "/root/tinyos/tinyos-main/tos/lib/timer/VirtualizeTimerC.nc"
-static inline void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__startTimer(uint8_t num, uint32_t t0, uint32_t dt, bool isoneshot)
-{
-  /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer_t *timer = &/*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__m_timers[num];
-
-#line 147
-  timer->t0 = t0;
-  timer->dt = dt;
-  timer->isoneshot = isoneshot;
-  timer->isrunning = TRUE;
-  /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__updateFromTimer__postTask();
-}
-
+#line 64
 # 175 "/root/tinyos/tinyos-main/tos/system/SchedulerBasicP.nc"
 static inline void SchedulerBasicP__TaskBasic__default__runTask(uint8_t id)
 {
 }
 
 # 75 "/root/tinyos/tinyos-main/tos/interfaces/TaskBasic.nc"
-inline static void SchedulerBasicP__TaskBasic__runTask(uint8_t arg_0x7fa8a2774650){
+inline static void SchedulerBasicP__TaskBasic__runTask(uint8_t arg_0x7fee12ca0650){
 #line 75
-  switch (arg_0x7fa8a2774650) {
+  switch (arg_0x7fee12ca0650) {
 #line 75
     case /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__fired:
 #line 75
@@ -4658,7 +4710,7 @@ inline static void SchedulerBasicP__TaskBasic__runTask(uint8_t arg_0x7fa8a277465
 #line 75
     default:
 #line 75
-      SchedulerBasicP__TaskBasic__default__runTask(arg_0x7fa8a2774650);
+      SchedulerBasicP__TaskBasic__default__runTask(arg_0x7fee12ca0650);
 #line 75
       break;
 #line 75
@@ -4925,9 +4977,9 @@ static void /*Msp430TimerC.Msp430TimerB*/Msp430TimerP__1__Event__default__fired(
 }
 
 # 39 "/root/tinyos/tinyos-main/tos/chips/msp430/timer/Msp430TimerEvent.nc"
-static void /*Msp430TimerC.Msp430TimerB*/Msp430TimerP__1__Event__fired(uint8_t arg_0x7fa8a2689dd0){
+static void /*Msp430TimerC.Msp430TimerB*/Msp430TimerP__1__Event__fired(uint8_t arg_0x7fee12bb5dd0){
 #line 39
-  switch (arg_0x7fa8a2689dd0) {
+  switch (arg_0x7fee12bb5dd0) {
 #line 39
     case 0:
 #line 39
@@ -4979,7 +5031,7 @@ static void /*Msp430TimerC.Msp430TimerB*/Msp430TimerP__1__Event__fired(uint8_t a
 #line 39
     default:
 #line 39
-      /*Msp430TimerC.Msp430TimerB*/Msp430TimerP__1__Event__default__fired(arg_0x7fa8a2689dd0);
+      /*Msp430TimerC.Msp430TimerB*/Msp430TimerP__1__Event__default__fired(arg_0x7fee12bb5dd0);
 #line 39
       break;
 #line 39
@@ -5314,6 +5366,48 @@ static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__fireTimers(u
   /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__updateFromTimer__postTask();
 }
 
+# 58 "/root/tinyos/tinyos-main/tos/chips/msp430/pins/HplMsp430GeneralIOP.nc"
+static void /*HplMsp430GeneralIOC.P54*/HplMsp430GeneralIOP__36__IO__toggle(void )
+#line 58
+{
+#line 58
+  { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
+#line 58
+    * (volatile uint8_t * )49U ^= 0x01 << 4;
+#line 58
+    __nesc_atomic_end(__nesc_atomic); }
+}
+
+#line 58
+static void /*HplMsp430GeneralIOC.P55*/HplMsp430GeneralIOP__37__IO__toggle(void )
+#line 58
+{
+#line 58
+  { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
+#line 58
+    * (volatile uint8_t * )49U ^= 0x01 << 5;
+#line 58
+    __nesc_atomic_end(__nesc_atomic); }
+}
+
+#line 58
+static void /*HplMsp430GeneralIOC.P56*/HplMsp430GeneralIOP__38__IO__toggle(void )
+#line 58
+{
+#line 58
+  { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
+#line 58
+    * (volatile uint8_t * )49U ^= 0x01 << 6;
+#line 58
+    __nesc_atomic_end(__nesc_atomic); }
+}
+
+# 154 "/root/tinyos/tinyos-main/tos/lib/timer/VirtualizeTimerC.nc"
+static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__startPeriodic(uint8_t num, uint32_t dt)
+{
+  /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__startTimer(num, /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__TimerFrom__getNow(), dt, FALSE);
+}
+
 # 147 "/root/tinyos/tinyos-main/tos/lib/timer/TransformAlarmC.nc"
 static void /*HilTimerMilliC.AlarmMilli32C.Transform*/TransformAlarmC__0__Alarm__startAt(/*HilTimerMilliC.AlarmMilli32C.Transform*/TransformAlarmC__0__to_size_type t0, /*HilTimerMilliC.AlarmMilli32C.Transform*/TransformAlarmC__0__to_size_type dt)
 {
@@ -5337,9 +5431,11 @@ static void /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__fired__runTask(voi
   /*HilTimerMilliC.AlarmToTimerC*/AlarmToTimerC__0__Timer__fired();
 }
 
-# 154 "/root/tinyos/tinyos-main/tos/lib/timer/VirtualizeTimerC.nc"
-static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__Timer__startPeriodic(uint8_t num, uint32_t dt)
+# 22 "sbC.nc"
+static void sbC__m_init(void )
 {
-  /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__startTimer(num, /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC__0__TimerFrom__getNow(), dt, FALSE);
+  sbC__inited = 0;
+  sbC__fscan = 0;
+  sbC__Timer_init__startPeriodic(1000);
 }
 
