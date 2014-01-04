@@ -7,11 +7,11 @@ implementation {
 	components MainC;
 	components LedsC;
 	components sbC;
-	components new TimerMilliC() as Timer0;
+	components new TimerMilliC() as Timer_init;
 
 	sbC -> MainC.Boot;
 
 	sbC.Boot -> MainC;
 	sbC.Leds -> LedsC;
-	sbC.Timer0 -> Timer0;
+	sbC.Timer_init -> Timer_init;
 }
