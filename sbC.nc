@@ -7,6 +7,9 @@ module sbC @safe()
 	uses interface Timer<TMilli> as Timer_dead;
 	uses interface Timer<TMilli> as Timer_winner;
 	uses interface Timer<TMilli> as Timer_startgame;
+	uses interface Timer<TMilli> as Timer_fight;
+	uses interface Timer<TMilli> as Timer_attack;
+	uses interface Timer<TMilli> as Timer_attacked;
 	uses interface SplitControl as AMControl;
 	uses interface AMSend;
 	uses interface AMPacket;
@@ -14,20 +17,24 @@ module sbC @safe()
 	uses interface Receive;
 	uses interface Boot;
 	uses interface Leds;
+	uses interface Random;
 }
 
 implementation 
 {
 	int8_t inited = 0;
 	int8_t fscan = 0;
+	int8_t fattack = 0;
+	int8_t fattacked = 0;
 	int8_t fstartgame = 0;
+	int8_t life = 100;
 	bool started = FALSE;
 	bool gamestarted = FALSE;
 	bool busy = FALSE;
 	void m_init();
 	void m_scan();
+	void m_attacked(int8_t);
 	void startgame(bool f);
-
 
 
 	uint16_t counter;
@@ -42,6 +49,7 @@ implementation
 	{
 		if (error == SUCCESS)
 		{
+			
 		}
 		else
 		{
@@ -76,6 +84,17 @@ implementation
 			startgame(rpkg->action == ACTION_FIND ? TRUE : FALSE);
 			return msg;
 			//AMSend.send(AM_BROADCAST_ADDR, &pkt, sizeof(1));
+		}
+		else if (rpkg->action == ACTION_ATTACK)
+		{
+			m_attacked((int8_t)rpkg->data);
+			return msg;	
+		}
+		else if (rpkg->action == ACTION_DIE)
+		{
+			call Timer_fight.stop();
+			call Timer_winner.startPeriodic(250);
+			return msg;
 		}
 		if (!busy)
 		{
@@ -213,6 +232,7 @@ implementation
 		if (fstartgame == 11)
 		{
 			call Timer_startgame.stop();
+			call Timer_fight.startPeriodic(2000);
 		}
 		call Leds.led0Toggle();
 		call Leds.led1Toggle();
@@ -220,9 +240,54 @@ implementation
 		fstartgame = fstartgame + 1;
 	}
 	
+	event void Timer_fight.fired()
+	{
+		pPPackage spkg;
+		call Timer_attack.startPeriodic(200);
+		spkg = (pPPackage)call Packet.getPayload(&pkt, sizeof(PPackage));
+		spkg->action = ACTION_ATTACK;
+		spkg->data = (nx_uint8_t)(call Random.rand16() % 0x10);
+		call AMSend.send(AM_BROADCAST_ADDR, &pkt, sizeof(PPackage));
+	}
 
 	event void Timer_dead.fired()
 	{
+	}
+
+	void m_addacked(int8_t x)
+	{
+		pPPackage spkg;
+		call Timer_attacked.startPeriodic(200);
+		life = life - x;
+		if (life < 0)
+		{
+			spkg = (pPPackage)(call Packet.getPayload(&pkt, sizeof(PPackage)));
+			spkg->action = ACTION_DIE;
+			call AMSend.send(AM_BROADCAST_ADDR, &pkt, sizeof(PPackage));
+			call Timer_fight.stop();
+			call Leds.led0On();
+			call Leds.led1On();
+			call Leds.led2On();
+		}
+		return;
+	}
+	
+	event void Timer_attack.fired()
+	{
+		if (fattack++ & 1)
+		{
+			call Timer_attack.stop();
+		}
+		call Leds.led0Toggle();
+	}
+	
+	event void Timer_attacked.fired()
+	{
+		if (fattacked++ & 1)
+		{
+			call Timer_attacked.stop();
+		}
+		call Leds.led2Toggle();
 	}
 	
 	event void Timer_winner.fired()

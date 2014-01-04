@@ -4,5 +4,6 @@
 #define ACTION_DIE		0x03
 
 typedef nx_struct{
-  nx_uint8_t action;
+	nx_uint8_t action;
+	nx_uint8_t data;
 } PPackage, *pPPackage;
