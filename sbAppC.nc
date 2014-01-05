@@ -1,4 +1,5 @@
 #include <Timer.h>
+#include <printf.h>
 
 #define AM_BLINKTORADIO 6
 
@@ -11,6 +12,8 @@ implementation {
 	components sbC;
 	components ActiveMessageC;
 	components RandomC;
+	components PrintfC;
+	components SerialStartC;
 	components new AMSenderC(AM_BLINKTORADIO);
 	components new AMReceiverC(AM_BLINKTORADIO);
 	components new TimerMilliC() as Timer_init;
@@ -21,6 +24,7 @@ implementation {
 	components new TimerMilliC() as Timer_fight;
 	components new TimerMilliC() as Timer_attack;
 	components new TimerMilliC() as Timer_attacked;
+	components new HamamatsuS1087ParC();   
 
 	sbC -> MainC.Boot;
 
@@ -40,4 +44,5 @@ implementation {
 	sbC.Timer_fight -> Timer_fight;
 	sbC.Timer_attack -> Timer_attack;
 	sbC.Timer_attacked -> Timer_attacked;
+	sbC.Read -> HamamatsuS1087ParC;
 }

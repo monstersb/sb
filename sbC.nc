@@ -1,4 +1,5 @@
 #include "protocol.h"
+#include <printf.h>
 
 module sbC @safe()
 {
@@ -18,6 +19,7 @@ module sbC @safe()
 	uses interface Boot;
 	uses interface Leds;
 	uses interface Random;
+	uses interface Read<uint16_t>;
 }
 
 implementation 
@@ -28,6 +30,7 @@ implementation
 	int8_t fattacked = 0;
 	int8_t fstartgame = 0;
 	int8_t life = 100;
+	int8_t atk = 0;
 	bool started = FALSE;
 	bool gamestarted = FALSE;
 	bool busy = FALSE;
@@ -42,6 +45,7 @@ implementation
 
 	event void Boot.booted()
 	{
+		printf("booted!\n");
 		m_init();
 	}
 
@@ -178,6 +182,7 @@ implementation
 	event void Timer_scan.fired()
 	{
 		pPPackage spkg;
+		//printf("scanning...\n");
 		fscan = fscan % 7;
 		if (fscan == 0)
 		{
@@ -232,7 +237,7 @@ implementation
 		if (fstartgame == 11)
 		{
 			call Timer_startgame.stop();
-			call Timer_fight.startPeriodic(2000);
+			call Timer_fight.startPeriodic(1000 + (call Random.rand16() % 2000));
 		}
 		call Leds.led0Toggle();
 		call Leds.led1Toggle();
@@ -243,21 +248,27 @@ implementation
 	event void Timer_fight.fired()
 	{
 		pPPackage spkg;
-		call Timer_attack.startPeriodic(200);
+		call Read.read();
+		call Timer_attack.startPeriodic(300);
 		spkg = (pPPackage)call Packet.getPayload(&pkt, sizeof(PPackage));
 		spkg->action = ACTION_ATTACK;
-		spkg->data = (nx_uint8_t)(call Random.rand16() % 0x10);
+		spkg->data = (nx_uint8_t)atk;
 		call AMSend.send(AM_BROADCAST_ADDR, &pkt, sizeof(PPackage));
+		call Timer_fight.stop();
+		call Timer_fight.startPeriodic(1000 + (call Random.rand16() % 2000));
 	}
 
 	event void Timer_dead.fired()
 	{
+		call Leds.led0On();
+		call Leds.led1On();
+		call Leds.led2On();
 	}
 
 	void m_attacked(int8_t x)
 	{
 		pPPackage spkg;
-		call Timer_attacked.startPeriodic(200);
+		call Timer_attacked.startPeriodic(100);
 		life = life - x;
 		if (life < 0)
 		{
@@ -265,9 +276,7 @@ implementation
 			spkg->action = ACTION_DIE;
 			call AMSend.send(AM_BROADCAST_ADDR, &pkt, sizeof(PPackage));
 			call Timer_fight.stop();
-			call Leds.led0On();
-			call Leds.led1On();
-			call Leds.led2On();
+			call Timer_dead.startPeriodic(100);
 		}
 		return;
 	}
@@ -283,11 +292,19 @@ implementation
 	
 	event void Timer_attacked.fired()
 	{
-		if (fattacked++ & 1)
+		if (fattacked & 1)
+		{
+			call Leds.led2Off();
+		}
+		else
+		{
+			call Leds.led2On();
+		}
+		if (fattacked % 4 == 3)
 		{
 			call Timer_attacked.stop();
 		}
-		call Leds.led2Toggle();
+		fattacked = fattacked + 1;
 	}
 	
 	event void Timer_winner.fired()
@@ -295,5 +312,14 @@ implementation
 		call Leds.led0Toggle();
 		call Leds.led1Toggle();
 		call Leds.led2Toggle();
+	}
+
+	
+	event void Read.readDone(error_t result, uint16_t data) 
+	{
+		if (result == SUCCESS)
+		{
+			atk = data;
+		}
 	}
 }
