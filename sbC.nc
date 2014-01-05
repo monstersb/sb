@@ -1,5 +1,6 @@
 #include "protocol.h"
 #include <printf.h>
+#include <math.h>
 
 module sbC @safe()
 {
@@ -29,6 +30,7 @@ implementation
 	int8_t fattack = 0;
 	int8_t fattacked = 0;
 	int8_t fstartgame = 0;
+	int8_t fwinner = 0;
 	int8_t life = 100;
 	int8_t atk = 0;
 	bool started = FALSE;
@@ -309,9 +311,18 @@ implementation
 	
 	event void Timer_winner.fired()
 	{
-		call Leds.led0Toggle();
-		call Leds.led1Toggle();
-		call Leds.led2Toggle();
+		if (fwinner++ & 1)
+		{
+			call Leds.led0On();
+			call Leds.led1On();
+			call Leds.led2On();
+		}
+		else
+		{
+			call Leds.led0Off();
+			call Leds.led1Off();
+			call Leds.led2Off();
+		}
 	}
 
 	
@@ -319,7 +330,8 @@ implementation
 	{
 		if (result == SUCCESS)
 		{
-			atk = data;
+			atk = sqrt(sqrt(data * 10) * 10);
+			//光照强度转化为节电攻击力。保证了光照强度的稳定性。
 		}
 	}
 }
